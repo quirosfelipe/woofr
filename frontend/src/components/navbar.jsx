@@ -8,13 +8,15 @@ const Navbar = () => (
   <div className="landing-page-navbar positioned">
     <div className="landing-page-navbar__header">
       <Link className="landing-page-navbar__header-logo" to="/">
-        <h2>woofr</h2>
+        <h2 className="woofr">
+          <strong>woofr</strong>
+        </h2>
       </Link>
     </div>
     <div className="landing-page-navbar__header">
       <Search />
     </div>
-    <Link className="landing-page-navbar__header">
+    <Link className="landing-page-navbar__header login-button">
       <Login />
     </Link>
   </div>

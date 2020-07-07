@@ -5,8 +5,8 @@ import "./landing-page.css";
 
 function LandingPage() {
   return (
-    <div classname="landing-master">
-      <Navbar />
+    <div className="landing-puppy">
+      <Navbar className="nav-class" />
       <div className="landing">
         <h1 className="text-header">
           <strong>Find your inspiration.</strong>
