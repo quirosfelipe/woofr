@@ -1,13 +1,29 @@
 .landing-page-navbar {
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: lightgrey;
 }
 
-.landing-page-navbar__header-logo {
+.landing-page-navbar__header{
+  margin: 0px;
+}
+
+.landing-page-navbar__header-logo  {
   text-decoration: none;
 }
 
-.landing-page-navbar {
-  padding-left: 20px;
-  padding-right: 25px;
+.landing-page-navbar__header-logo > h1 {
+  margin: 0px;
+}
+
+.landing-page-navbar__search {
+  
+  align-self: center;
+}
+
+.landing-page-navbar__login{
+  align-self: center;
+  
 }

@@ -10,10 +10,10 @@ const Navbar = () => (
         <h1>Woofr</h1>
       </Link>
     </div>
-    <div className="options">
+    <div className="landing-page-navbar__search">
       <input alt="Search"></input>
     </div>
-    <Link className="option">
+    <Link className="landing-page-navbar__login">
       <Login />
     </Link>
   </div>

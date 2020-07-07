@@ -1,2 +1,10 @@
-.login-button {
+.login-button:hover{
+    color:black;
+    background-color: aquamarine;
 }
+
+.login-button{
+    vertical-align: center;
+    background-color: blueviolet;
+}
+
