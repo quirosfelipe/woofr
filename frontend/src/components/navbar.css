@@ -1,0 +1,13 @@
+.landing-page-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-page-navbar__header-logo {
+  text-decoration: none;
+}
+
+.landing-page-navbar {
+  padding-left: 20px;
+  padding-right: 20px;
+}
