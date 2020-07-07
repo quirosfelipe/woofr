@@ -4,12 +4,11 @@ import Login from "./login";
 import "./navbar.css";
 import Search from "./search";
 
-
 const Navbar = () => (
   <div className="landing-page-navbar positioned">
     <div className="landing-page-navbar__header">
       <Link className="landing-page-navbar__header-logo" to="/">
-        <h1>Woofr</h1>
+        <h2>woofr</h2>
       </Link>
     </div>
     <div className="landing-page-navbar__header">
