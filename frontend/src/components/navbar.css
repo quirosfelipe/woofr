@@ -1,10 +1,21 @@
 .landing-page-navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  position: absolute;
+  width: 90%;
 }
 
-.landing-page-navbar__header-logo {
+/* .positioned {
+  position: absolute;
+} */
+
+.landing-page-navbar__header {
   text-decoration: none;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
 .landing-page-navbar {
