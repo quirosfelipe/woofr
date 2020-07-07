@@ -14,3 +14,42 @@ code {
     monospace;
 }
 
+
+/* ////
+
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+
+body{
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+
+}
+
+#root{
+  height: 100%;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.header{
+  grid-area: 1/1/2/4;
+  background-color: darkolivegreen;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+} */
