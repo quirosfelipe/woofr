@@ -6,12 +6,15 @@
   background-color: lightgrey;
 }
 
-.landing-page-navbar__header{
+.landing-page-navbar__header {
   margin: 0px;
 }
 
-.landing-page-navbar__header-logo  {
+.landing-page-navbar__header-logo {
   text-decoration: none;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
 .landing-page-navbar__header-logo > h1 {
@@ -19,11 +22,9 @@
 }
 
 .landing-page-navbar__search {
-  
   align-self: center;
 }
 
-.landing-page-navbar__login{
+.landing-page-navbar__login {
   align-self: center;
-  
 }
