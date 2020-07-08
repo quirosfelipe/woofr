@@ -3,3 +3,19 @@
   height: 600px;
   border-radius: 15px solid;
 }
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  position: absolute;
+  width: 100%;
+}
+
+.photo-footer{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin: 5px;
+}
