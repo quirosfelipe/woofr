@@ -27,6 +27,7 @@ body {
 
 
 .header{
+
   grid-area: header;
   display: flex;
   justify-content: space-between;
@@ -75,6 +76,7 @@ body {
 
 .main{
   grid-area: main;
+  padding: 1rem;
 }
 
 .footer{
@@ -91,7 +93,7 @@ body {
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  padding: 0;
+  padding: 1rem;
   flex-wrap: wrap;
 }
 
