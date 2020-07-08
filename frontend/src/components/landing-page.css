@@ -6,6 +6,18 @@
   /* display: flex; */
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 8rem;
+  height: 100%;
+}
+
+#root{
+  height: 100%;
 }
 
 .text-header {
@@ -17,17 +29,18 @@
   color: white;
 }
 
-.nav-class {
+.header {
+  grid-area: header;
   align-self: flex-start;
 }
-.landing {
-  align-self: center;
-  position: relative;
+.main {
+  grid-area: main;
+  align-self: flex-end;
   text-align: center;
-  top: 300px;
 }
 
 .footer {
+  grid-area: footer;
   align-self: flex-end;
   display: flex;
   flex-direction: row;
@@ -37,7 +50,8 @@
   color: white;
   background-color: rgba(14, 7, 7, 0.7);
   width: 100%;
-  margin-top: 595px;
+  /* margin-top: 400px; */
+  height: 100%;
 }
 
 .photo-footer {

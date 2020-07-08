@@ -6,8 +6,8 @@ import "./landing-page.css";
 function LandingPage() {
   return (
     <div className="landing-puppy">
-      <Navbar className="nav-class" />
-      <div className="landing">
+      <Navbar className="header"/>
+      <main className="main">
         <h1 className="text-header">
           <strong>Find your inspiration.</strong>
         </h1>
@@ -15,8 +15,8 @@ function LandingPage() {
           Join the Woofr community, home to tens of billions
         </p>
         <p className="text-fill"> of dog's photos.</p>
-      </div>
-      <div className="footer">
+      </main>
+      <footer className="footer">
         Created by:
         <a href="https://github.com/quirosfelipe">
           <img
@@ -36,7 +36,7 @@ function LandingPage() {
             className="photo-footer"
           ></img>
         </a>
-      </div>
+      </footer>
     </div>
   );
 }
