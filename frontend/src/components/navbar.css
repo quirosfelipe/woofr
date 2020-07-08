@@ -8,13 +8,14 @@
 
 .landing-page-navbar__header {
   margin: 0px;
+  align-self: center;
 }
 
 .landing-page-navbar__header-logo {
   text-decoration: none;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
 }
 
 .landing-page-navbar__header-logo > h1 {
