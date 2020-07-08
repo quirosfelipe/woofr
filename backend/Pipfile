@@ -19,6 +19,9 @@ pycodestyle = "*"
 pylint = "*"
 rope = "*"
 wtforms = "*"
+python-jose = "*"
+flask-cors = "*"
+six = "*"
 
 [requires]
 python_version = "3.8"
