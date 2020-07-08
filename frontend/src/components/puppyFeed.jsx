@@ -1,11 +1,11 @@
 import React from "react";
 import "./puppyFeed.css";
-import Navbar from "./navbar";
+import Navbar2 from "./navbar2";
 
 export default function PuppyFeed() {
   return (
     <div classname="grid-container">
-      <Navbar className="nav-class" />
+      <Navbar2 className="nav-class" />
     </div>
   );
 }
