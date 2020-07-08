@@ -1,21 +1,42 @@
+/* body {
+  background-image: url(https://mysweetpuppy.net/wp-content/uploads/2016/09/best-dog-food-for-pitbull-puppy.jpg);
+  background-position: 78% 42%;
+} */
+/* .landing-master {
+  position: relative;
+} */
 .landing-page-navbar {
   display: flex;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
   padding-left: 20px;
   padding-right: 20px;
-  background-color: lightgrey;
+  position: absolute;
+  width: 98%;
+  height: 7%;
+  top: 0px;
 }
 
 .landing-page-navbar__header {
   margin: 0px;
   align-self: center;
+  border-radius: 15%;
+}
+.login-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 80px;
+  height: 40px;
+  /* padding: 10px 20px 10px 20px; */
+  border-radius: 5%;
+  border: none;
 }
 
 .landing-page-navbar__header-logo {
   text-decoration: none;
-  display: flex; 
+  display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .landing-page-navbar__header-logo > h1 {
@@ -28,4 +49,8 @@
 
 .landing-page-navbar__login {
   align-self: center;
+}
+.woofr {
+  font-size: 35px;
+  color: lightsalmon;
 }
