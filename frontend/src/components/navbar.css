@@ -22,7 +22,14 @@
   height: 40px;
   border-radius: 5%;
   border: none;
+  cursor: pointer;
 }
+
+.login-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 .landing-page-navbar__header-logo {
   text-decoration: none;
   display: flex;
