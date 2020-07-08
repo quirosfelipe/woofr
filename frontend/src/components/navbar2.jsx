@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logout from "./logout";
+
 import "./navbar2.css";
 import Search from "./search";
 
@@ -16,9 +16,9 @@ const Navbar2 = () => (
     <div className="landing-page-navbar__header">
       <Search />
     </div>
-    <Link className="landing-page-navbar__header login-button">
+    {/* <Link className="landing-page-navbar__header login-button">
       <Logout />
-    </Link>
+    </Link> */}
   </div>
 );
 export default Navbar2;

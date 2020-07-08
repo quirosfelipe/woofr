@@ -6,7 +6,7 @@ import "./landing-page.css";
 function LandingPage() {
   return (
     <div className="landing-puppy">
-      <Navbar className="header"/>
+      <Navbar className="header" />
       <main className="main">
         <h1 className="text-header">
           <strong>Find your inspiration.</strong>
