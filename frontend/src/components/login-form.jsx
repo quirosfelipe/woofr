@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import "./login-form.css";
 
-const Login = (prop) => {
+const Login = (props) => {
   const [loginData, setLoginData] = React.useState({
     email: "",
     password: "",
