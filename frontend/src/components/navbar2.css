@@ -1,7 +1,7 @@
-.landing-page-navbar {
+.landing-page-navbar2 {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: black;
   padding-left: 20px;
   padding-right: 20px;
   position: absolute;
@@ -15,9 +15,9 @@
   align-self: center;
   border-radius: 15%;
 }
-.login-button {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+.logout-button {
+  background-color: white;
+  color: black;
   width: 80px;
   height: 40px;
   border-radius: 5%;
@@ -44,4 +44,9 @@
 .woofr {
   font-size: 35px;
   color: lightsalmon;
+}
+.profile {
+  width: 40px;
+  align-self: end;
+  border-radius: 30px;
 }
