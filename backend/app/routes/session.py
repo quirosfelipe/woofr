@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 import jwt
 
-# from ..models import db
-# from ..models.users import User
+from ..models import db
+from ..models.users import User
 from ..config import Configuration
 from ..auth import require_auth
 
@@ -28,7 +28,8 @@ def login():
 def register():
     data = request.json
     print(f"\n\n\nDATA\n{data}\n\n\n")
-    user = User(password=data['password'], email=data['email'])
+    user = User(password=data['password'],
+                user_name=data['user_name'], email=data['email'])
     db.session.add(user)
     db.session.commit()
 
