@@ -2,6 +2,7 @@ import React from "react";
 import "./puppyFeed.css";
 import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
 import puppy1 from './images/puppy1.jpg'
+import Logout from './logout'
 
 import Navbar from "./navbar";
 
@@ -18,6 +19,7 @@ export default function PuppyFeed() {
           </div>
           <div className="header-links">
               <a href="/user">User</a>
+              <Logout/>
           </div>
         </header>
         <main className="main">
@@ -91,5 +93,14 @@ export default function PuppyFeed() {
         </footer>
 
       </div>
-  );
+  )
 }
+// import Navbar2 from "./navbar2";
+
+// export default function PuppyFeed() {
+//   return (
+//     <div classname="grid-container">
+//       <Navbar2 className="nav-class" />
+//     </div>
+//   );
+// }
