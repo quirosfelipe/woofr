@@ -1,0 +1,57 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 1.6rem;
+    margin: 0;
+    height: 100vh;
+  }
+
+  #root{
+    height: 100%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr 5rem;
+    height: 100%;
+  }
+
+
+ .content{
+   display:grid;
+   grid-template-areas: "photo-main" "profile-main" "comments-main";
+   grid-template-columns: 1fr;
+   grid-template-rows: 50rem 10rem auto;
+ }
+
+ .photo-main{
+   grid-area: photo-main;
+   width: 100%;
+   justify-content: center;
+   height: 100%;
+  }
+
+  .photo-main.link-return{
+    justify-content: flex-start;
+  }
+
+
+    .profile-main{
+    grid-area: profile-main;
+    display:flex;
+    width:100%;
+    justify-content: center;
+
+  }
+
+  /* .comments-main{
+    grid-area: comments-main;
+  }  */
