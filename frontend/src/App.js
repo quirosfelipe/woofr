@@ -9,6 +9,8 @@ import PuppyFeed from "./components/puppyFeed";
 import LandingPage from "./components/landing-page";
 import PhotoPage from "./components/photo-page";
 import CommentBox from "./components/comments-component";
+import ProfilePage from "./components/profile-page";
+import Timeline from "./components/timeline-component";
 import Navbar from "./components/navbar";
 import SessionForm from "./components/login-form";
 
@@ -36,7 +38,12 @@ const App = (props) => {
           // loggedIn={loggedIn}
         />
         {/* <Route path="/logout" component={Logout} /> */}
-        <PrivateRoute
+        <Route path="/puppyfeed" component={PuppyFeed} />
+        <Route path="/photo-page" component={PhotoPage} />
+        <Route path="/profile-page" component={ProfilePage} />
+        <Route path="/container" component={Timeline} />
+        <Route exact path="/" component={LandingPage} />
+        {/* <PrivateRoute
           path="/puppyfeed"
           component={PuppyFeed}
           // loggedIn={loggedIn}
@@ -50,7 +57,7 @@ const App = (props) => {
           path="/container"
           component={CommentBox}
           loggedIn={loggedIn}
-        />
+        /> */}
       </Switch>
     </BrowserRouter>
   );

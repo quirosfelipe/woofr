@@ -19,14 +19,19 @@ export default function PhotoPage() {
         </div>
         {/* <div className="header-links">
               <a href="/user">User</a>
-              <Logout/>
-          </div> */}
-      </header>
-      <main className="main">
-        <div className="content">
-          <div className="photo-main">
-            <div className="link-return">
-              <a href="/puppyfeed">Go back to feed page</a>
+              {/* <Logout/> */}
+          {/* </div> */}
+        </header>
+        <main className="main">
+          <div className="content">
+            <div className="photo-main">
+              <div className="link-return">
+                <a href="/puppyfeed">Go back to feed page</a>
+              </div>
+              <img alt="puppy-pic" src="http://farm66.staticflickr.com/65535/50085236156_7e3a56d093.jpg"></img>
+            </div>
+            <div className="profile-main">
+                <UserNameBox />
             </div>
             <img
               alt="puppy-pic"
