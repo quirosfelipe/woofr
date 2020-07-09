@@ -1,29 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import { connect } from "react-redux";
+import { login } from "../actions/sessionActions";
 import { Redirect, Link } from "react-router-dom";
 import "./login-form.css";
 
-const Login = (props) => {
-  const [loginData, setLoginData] = React.useState({
-    email: "",
-    password: "",
-  });
+const SessionForm = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const updateEmail = (event) => {
-    setLoginData({
-      ...loginData,
-      email: event.target.value,
-    });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
-
-  const updatePassword = (event) => {
-    setLoginData({
-      ...loginData,
-      password: event.target.value,
-    });
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.login(email, password);
   };
 
   return (
@@ -44,14 +38,16 @@ const Login = (props) => {
             <input
               className="login-container__form-email"
               type="email"
+              // name={email}
               placeholder="example@email.com"
-              onChange={updateEmail}
+              onChange={handleEmailChange}
             ></input>
             <br />
             <input
               className="login-container__form-password"
               type="password"
-              onChange={updatePassword}
+              // value={password}
+              onChange={handlePasswordChange}
             ></input>
             <br />
             <button className="login-container__form-submit" type="submit">
@@ -63,4 +59,9 @@ const Login = (props) => {
     </div>
   );
 };
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (email, password) => dispatch(login(email, password)),
+  };
+};
+export default connect(null, mapDispatchToProps)(SessionForm);
