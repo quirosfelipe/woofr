@@ -6,6 +6,8 @@ import PuppyFeed from "./components/puppyFeed";
 import LandingPage from "./components/landing-page";
 import PhotoPage from "./components/photo-page";
 import CommentBox from "./components/comments-component";
+import ProfilePage from "./components/profile-page";
+import Timeline from "./components/timeline-component";
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/puppyfeed" component={PuppyFeed} />
         <Route path="/photo-page" component={PhotoPage} />
-        <Route path="/container" component={CommentBox} />
+        <Route path="/profile-page" component={ProfilePage} />
+        <Route path="/container" component={Timeline} />
         <Route exact path="/" component={LandingPage} />
       </Switch>
     </BrowserRouter>

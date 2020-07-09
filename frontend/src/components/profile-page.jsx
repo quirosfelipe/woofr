@@ -7,7 +7,7 @@ import UserNameBox from './username-box'
 import CommentBox from './comments-component'
 
 
-export default function PhotoPage() {
+export default function ProfilePage() {
   return (
       <div className="grid-container">
         <header className="header">
