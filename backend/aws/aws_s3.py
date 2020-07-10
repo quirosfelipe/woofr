@@ -35,3 +35,12 @@ def list_files(bucket):
         contents.append(item)
 
     return contents
+
+def get_photo(file_name, bucket):
+    url = s3.generate_presigned_url('get_object',
+                                Params={
+                                    'Bucket': 'woofr',
+                                    'Key': f"upload/{file_name}",
+                                },                                  
+                                ExpiresIn=3600)
+    return url
