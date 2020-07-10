@@ -3,9 +3,8 @@ import "./profile-page.css";
 import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
 import puppy1 from './images/puppy1.jpg'
 // import Logout from './logout'
-import UserNameBox from './username-box'
-import CommentBox from './comments-component'
 import Timeline from './timeline-component'
+import PhotoBox from "./photo-box";
 
 
 export default function ProfilePage() {
@@ -43,6 +42,9 @@ export default function ProfilePage() {
             <div className="comments-main">
                 <div><h3>Your Photos</h3>
                 <ul className="photos">
+                    <PhotoBox className="photo"/>
+                    <PhotoBox className="photo"/>
+                    <PhotoBox className="photo"/>
                     <li>
                     <div className="photo">
                         <div className="photo-header">

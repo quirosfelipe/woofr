@@ -6,7 +6,7 @@ const CommentBox = () => {
 
   return (
     <div className="comment-container">
-        <div className="picture">
+        <div className="picture-comment">
             <img src="http://farm66.staticflickr.com/65535/50084651468_07fa3ef705.jpg"></img>
             <div>Username</div>
         </div>

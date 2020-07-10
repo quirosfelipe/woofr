@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 2.4rem;
   background-color: black;
   font-size: 0.5rem;
 }
@@ -75,8 +75,16 @@ body {
 }
 
 .main{
+  /* background-image: url(https://st2.depositphotos.com/5746754/9893/v/950/depositphotos_98936132-stock-illustration-repeating-pattern-with-grey-paw.jpg); */
+  /* background-size: cover; */
   grid-area: main;
   padding: 1rem;
+}
+
+.main::before{
+
+  opacity: 0.3;
+  background-size: cover;
 }
 
 .footer{
@@ -101,9 +109,16 @@ body {
 .photos li{
   flex: 0 1 30rem;
   margin: 1rem;
-  height: 40rem;
-  border: 0.1rem gray solid;
+  height: 100%;
+  border: 0.1rem pink solid;
   border-radius: 1.5rem;
+  background-color: white;
+  box-shadow: 0.2rem 0.2rem pink;
+}
+
+.photos li:hover{
+  box-shadow: 0.6rem 1.2rem red;
+  transform: translate(0.2rem,0.2rem);
 }
 
 .photo{

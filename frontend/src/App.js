@@ -13,6 +13,7 @@ import ProfilePage from "./components/profile-page";
 import Timeline from "./components/timeline-component";
 import Navbar from "./components/navbar";
 import SessionForm from "./components/login-form";
+import UserNameBox from "./components/username-box";
 
 const App = () => {
   // const { loadToken } = props;
@@ -39,9 +40,9 @@ const App = () => {
         {/* /> */}
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/puppyfeed" component={PuppyFeed} />
-        <Route path="/photo-page" component={PhotoPage} />
+        <Route path="/photo-page/:id" component={PhotoPage} />
         <Route path="/profile-page" component={ProfilePage} />
-        <Route path="/container" component={Timeline} />
+        <Route path="/container" component={CommentBox} />
         <Route exact path="/" component={LandingPage} />
         {/* <PrivateRoute
           path="/puppyfeed"

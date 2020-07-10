@@ -1,70 +1,74 @@
 .timeline-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    border-top: 0.1rem solid grey;
-    border-bottom: 0.1rem solid grey;
-    height: 30rem;
-    padding: 0.5rem;
-    background-image: url(http://farm66.staticflickr.com/65535/50084653098_7151c25bd0.jpg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-top: 0.1rem solid grey;
+  border-bottom: 0.1rem solid grey;
+  height: 30rem;
+  padding: 0.5rem;
+  background-image: url(http://farm66.staticflickr.com/65535/50084653098_7151c25bd0.jpg);
+}
+
+.picture img{
+    align-self: center;
+    justify-content: center;
+    position: relative;
+    top: 18rem;
+    border-radius: 50%;
+    border: 1rem solid white;
+    width: 8.5rem;
+    height: 8.5rem;
+    box-shadow: 0.3rem 0.3rem black;
+    padding:0;
   }
 
-  .picture img{
-      align-self: center;
-      justify-content: center;
-      position: relative;
-      top: 18rem;
-      border-radius: 50%;
-      border: 1rem solid white;
-      width: 8.5rem;
-      height: 8.5rem;
-      box-shadow: 0.3rem 0.3rem black;
-      padding:0;
-    }
 
 
-  .info {
-      align-self: center;
-      max-width: 9rem;
-      max-height: 9rem;
-      padding:1rem;
-      box-sizing: border-box;
-      position: relative;
-      top: 7rem;
+
+
+
+.info {
+    align-self: center;
+    max-width: 9rem;
+    max-height: 9rem;
+    padding:1rem;
+    box-sizing: border-box;
+    position: relative;
+    top: 7rem;
+    color: white;
+    text-decoration-style: none;
+    text-shadow: 0.3rem 0.3rem black;
+  }
+
+  .info a{
+
       color: white;
       text-decoration-style: none;
-      text-shadow: black 0.1rem 0.2rem;
     }
 
-    .info a{
-
-        color: white;
-        text-decoration: none;
-      }
-
-  .follow {
-      padding: 3rem 2rem 2rem 2rem;
-      align-self: center;
-      /* border-left: 0.1rem solid grey; */
-      height: 100%;
-    }
-
-
-
-
-  .widgets{
-    display: flex;
-      padding:1.5rem;
-      text-decoration-style: none;
-      /* border-left: 0.1rem solid grey; */
-      height: 100%;
-      align-self: center;
-      justify-content: center;
-      justify-content: space-between;
-    }
-
-  .widgets div{
-    align-items: center;
+.follow {
+    padding: 3rem 2rem 2rem 2rem;
     align-self: center;
-    padding: 6rem;
+    /* border-left: 0.1rem solid grey; */
+    height: 100%;
   }
+
+
+
+
+.widgets{
+  display: flex;
+    padding:1.5rem;
+    text-decoration-style: none;
+    /* border-left: 0.1rem solid grey; */
+    height: 100%;
+    align-self: center;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
+.widgets div{
+  align-items: center;
+  align-self: center;
+  padding: 6rem;
+}

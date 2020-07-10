@@ -6,10 +6,10 @@ const UserNameBox = () => {
 
   return (
     <div className="username-container">
-        <div className="picture">
+        <div className="picture-box">
             <img src="http://farm66.staticflickr.com/65535/50084651468_07fa3ef705.jpg"></img>
         </div>
-        <div className="info">
+        <div className="info-box">
             <div>Username</div>
             <div>nickname</div>
             <div>Bio</div>
