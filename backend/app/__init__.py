@@ -4,6 +4,8 @@ from flask_cors import CORS
 
 from app.config import Configuration
 from app.routes import session
+from app.routes import comments
+from app.routes import photos
 from app.models import db
 
 
@@ -14,3 +16,5 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 app.register_blueprint(session.bp)
+app.register_blueprint(comments.bp)
+app.register_blueprint(photos.bp)
