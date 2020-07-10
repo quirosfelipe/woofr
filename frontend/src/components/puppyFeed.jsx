@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
 import "./puppyFeed.css";
 import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
+import { fetchAllPhotos } from "../actions/photosActions";
 import puppy1 from "./images/puppy1.jpg";
-import data from './data.js'
+import { getAllPhotos } from "../reducers/photoReducer";
+// import data from "./data.js"
 // import Logout from "./logout";
 
-export default function PuppyFeed() {
+const PuppyFeed = (props) => {
+  const photos = useSelector((state) => state.sneakerList);
+  console.log("this is sneakerDetails", sneakerList);
+  const { sneakers, loading, error } = sneakerList;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(listSneakers());
+  }, []);
+
   return (
     <div className="grid-container">
       <header className="header">
@@ -17,14 +29,14 @@ export default function PuppyFeed() {
           <a href="/upload">Upload</a>
         </div>
         <div className="header-links">
-              <a href="/user">User</a>
-              {/* <Logout/> */}
-          </div>
+          <a href="/user">User</a>
+          {/* <Logout/> */}
+        </div>
       </header>
       <main className="main">
         <div className="main-content">
           <ul className="photos">
-            {data.puppies.map(puppy =>
+            {props.photos.map((puppy) => (
               <li key={puppy.id}>
                 <Link to={`/photo-page/${puppy.id}`}>
                   <div className="photo">
@@ -36,22 +48,31 @@ export default function PuppyFeed() {
                     <div className="photo-description">{puppy.description}</div>
                   </div>
                 </Link>
-             </li>
-
-            )}
+              </li>
+            ))}
           </ul>
         </div>
       </main>
       <footer className="footer">our footer</footer>
     </div>
   );
-}
-// import Navbar2 from "./navbar2";
+};
 
-// export default function PuppyFeed() {
-//   return (
-//     <div classname="grid-container">
-//       <Navbar2 className="nav-class" />
-//     </div>
-//   );
-// }
+const msp = (state) => {
+  // let photo = ownProps.match.params.photos.id;
+  // const { photo } = state;
+  // return {
+  //   // photo: photo,
+  //   // photo: state.photos[photo],
+  //   photo,
+  // };
+  photos: getAllPhotos(state);
+};
+
+const mdp = (dispatch) => {
+  return {
+    fetchAllPhotos: () => dispatch(fetchAllPhotos()),
+  };
+};
+
+export default connect(msp, mdp)(PuppyFeed);
