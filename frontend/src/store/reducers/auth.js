@@ -7,6 +7,20 @@ export const UPDATE_EMAIL = 'UPDATE_EMAIL';
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
 
 //ACTIONS
+const updatePassword = (value) => ({
+	type: UPDATE_PASSWORD,
+	value,
+});
+
+const updateEmail = (value) => ({
+	type: UPDATE_EMAIL,
+	value,
+});
+
+export const actions = {
+	updateEmail,
+	updatePassword,
+};
 
 const removeToken = () => {
 	return {
@@ -14,13 +28,7 @@ const removeToken = () => {
 	};
 };
 
-const setToken = (access_token) => {
-	// debugger
-	return {
-		type: SET_TOKEN,
-		access_token,
-	};
-};
+const setToken = (access_token) => ({ type: SET_TOKEN, access_token });
 
 export const loadToken = () => async (dispatch) => {
 	const access_token = window.localStorage.getItem(TOKEN_KEY);
@@ -30,15 +38,19 @@ export const loadToken = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
+	console.log(email, password);
 	try {
 		// debugger;
-		const response = await fetch(`${baseUrl}/api/session/`, {
-			method: 'post',
+		console.log('retrieving');
+		const response = await fetch(`http://localhost:5000/api/session`, {
+			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ email, password }),
+			data: JSON.stringify({ email: email, password: password }),
 		});
 
+		console.log('failed');
 		if (response.ok) {
+			console.log('here');
 			const { access_token } = await response.json();
 			window.localStorage.setItem(TOKEN_KEY, access_token);
 			return dispatch(setToken(access_token));
@@ -80,7 +92,7 @@ export const signup = (email, password) => async (dispatch) => {
 
 //REDUCERS
 const initialState = {
-	token: '',
+	access_token: '',
 };
 export const authReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -99,12 +111,12 @@ export const authReducer = (state = initialState, action) => {
 		case SET_TOKEN: {
 			return {
 				...state,
-				token: action.token,
+				access_token: action.access_token,
 			};
 		}
 		case REMOVE_TOKEN: {
 			const newState = { ...state };
-			delete newState.token;
+			delete newState.access_token;
 			return newState;
 		}
 		default: {

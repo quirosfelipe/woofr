@@ -12,6 +12,7 @@ bp = Blueprint("session", __name__, url_prefix='/api/session')
 @bp.route('', methods=["POST"])
 def login():
     data = request.json
+    print(f"\n\n\nDATA\n{data}\n\n\n")
     user = User.query.filter(User.email == data['email']).first()
     if not user:
         return {"error": "Email not found"}, 422

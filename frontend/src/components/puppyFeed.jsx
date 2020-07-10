@@ -1,28 +1,9 @@
-import React, { useState, useEffect, Component } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './puppyFeed.css';
-import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
-import { fetchAllPhotos } from '../actions/photosActions';
-import puppy1 from './images/puppy1.jpg';
-import { getAllPhotos } from '../reducers/photoReducer';
-
+import { Link } from 'react-router-dom';
 import { fetchPuppyPhotos } from '../store/utils/apiUtil';
-import { getPhotoById } from '../store/reducers/puppyPhotos';
 import { getPhotos } from '../store/reducers/puppyPhotos';
-
-// import data from "./data.js"
-// import Logout from "./logout";
-
-// const PuppyFeed = (props) => {
-//   const photos = useSelector((state) => state.sneakerList);
-//   console.log("this is sneakerDetails", sneakerList);
-//   const { sneakers, loading, error } = sneakerList;
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(listSneakers());
-//   }, []);
-
 
 class PuppyFeed extends Component {
 	componentDidMount() {
@@ -56,7 +37,11 @@ class PuppyFeed extends Component {
 												<div className='photo-owner'>{photo.id}</div>
 												<div className='photo-title'>{photo.photoName}</div>
 											</div>
-											<img className='photo-img' src={photo.photoUrl}></img>
+											<img
+												className='photo-img'
+												alt={photo.photoName}
+												src={photo.photoUrl}
+											></img>
 											<div className='photo-description'>
 												{photo.description}
 											</div>
@@ -72,25 +57,8 @@ class PuppyFeed extends Component {
 		);
 	}
 }
-// const msp = (state) => {
-//   // let photo = ownProps.match.params.photos.id;
-//   // const { photo } = state;
-//   // return {
-//   //   // photo: photo,
-//   //   // photo: state.photos[photo],
-//   //   photo,
-//   // };
-//   photos: getAllPhotos(state);
-// };
-
-// const mdp = (dispatch) => {
-//   return {
-//     fetchAllPhotos: () => dispatch(fetchAllPhotos()),
-//   };
-// };
 
 const mapStateToProps = (state, id) => ({
-	photo: getPhotoById(state, id),
 	photos: getPhotos(state),
 });
 

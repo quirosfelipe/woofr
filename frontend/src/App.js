@@ -1,50 +1,52 @@
-import React, { useEffect } from "react";
+import React from 'react';
 // import { connect } from "react-redux";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { PrivateRoute, AuthRoute } from "./utils/routeUtils";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { PrivateRoute, AuthRoute } from './utils/routeUtils';
 //import { loadToken, TOKEN_KEY } from "./actions/sessionActions";
 //import Login from "./components/login-form";
 // import Logout from "./components/logout";
-import PuppyFeed from "./components/puppyFeed";
-import LandingPage from "./components/landing-page";
-import PhotoPage from "./components/photo-page";
-import CommentBox from "./components/comments-component";
-import ProfilePage from "./components/profile-page";
-import Timeline from "./components/timeline-component";
-import Navbar from "./components/navbar";
-import SessionForm from "./components/login-form";
-import UserNameBox from "./components/username-box";
+import PuppyFeed from './components/puppyFeed';
+import LandingPage from './components/landing-page';
+import PhotoPage from './components/photo-page';
+import CommentBox from './components/comments-component';
+import ProfilePage from './components/profile-page';
+// import Timeline from './components/timeline-component';
+// import Navbar from './components/navbar';
+// import SessionForm from './components/login-form';
+// import UserNameBox from './components/username-box';
+import LoginForm from './components/login-form';
 
 const App = () => {
-  // const { loadToken } = props;
+	// const { loadToken } = props;
 
-  // useEffect(() => {
-  //   loadToken();
-  // }, [loadToken]);
+	// useEffect(() => {
+	//   loadToken();
+	// }, [loadToken]);
 
-  // let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
-  // let access_token = localStorageToken ? localStorageToken : props.access_token;
+	// let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
+	// let access_token = localStorageToken ? localStorageToken : props.access_token;
 
-  // let loggedIn = access_token ? true : false;
+	// let loggedIn = access_token ? true : false;
 
-  // debugger
-  return (
-    <BrowserRouter>
-      {/* {loggedIn ? <Route path="/" component={LandingPage} /> : null} */}
-      <Switch>
-        {/* <AuthRoute exact path="/" component={LandingPage} />
+	// debugger
+	return (
+		<BrowserRouter>
+			{/* {loggedIn ? <Route path="/" component={LandingPage} /> : null} */}
+			<Switch>
+				{/* <AuthRoute exact path="/" component={LandingPage} />
         <AuthRoute
           path="/login-form"
           component={SessionForm}
           // loggedIn={loggedIn} */}
-        {/* /> */}
-        {/* <Route path="/logout" component={Logout} /> */}
-        <Route path="/puppyfeed" component={PuppyFeed} />
-        <Route path="/photo-page/:id" component={PhotoPage} />
-        <Route path="/profile-page" component={ProfilePage} />
-        <Route path="/container" component={CommentBox} />
-        <Route exact path="/" component={LandingPage} />
-        {/* <PrivateRoute
+				{/* /> */}
+				{/* <Route path="/logout" component={Logout} /> */}
+				<Route path='/login' component={LoginForm} />
+				<Route path='/puppyfeed' component={PuppyFeed} />
+				<Route path='/photo-page/:id' component={PhotoPage} />
+				<Route path='/profile-page' component={ProfilePage} />
+				<Route path='/container' component={CommentBox} />
+				<Route exact path='/' component={LandingPage} />
+				{/* <PrivateRoute
           path="/puppyfeed"
           component={PuppyFeed}
           // loggedIn={loggedIn}
@@ -59,9 +61,9 @@ const App = () => {
           component={CommentBox}
           loggedIn={loggedIn}
         /> */}
-      </Switch>
-    </BrowserRouter>
-  );
+			</Switch>
+		</BrowserRouter>
+	);
 };
 
 // const msp = (state) => {
