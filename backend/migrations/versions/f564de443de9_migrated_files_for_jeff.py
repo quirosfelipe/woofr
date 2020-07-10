@@ -1,8 +1,8 @@
-"""creating all tables except users
+"""migrated files for jeff
 
-Revision ID: 9b782fe3b264
-Revises: 024cd7eeb371
-Create Date: 2020-07-09 16:00:00.782746
+Revision ID: f564de443de9
+Revises: 
+Create Date: 2020-07-09 20:59:43.641759
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9b782fe3b264'
-down_revision = '024cd7eeb371'
+revision = 'f564de443de9'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -22,6 +22,15 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('tagName', sa.String(length=40), nullable=False),
     sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('users',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_name', sa.String(length=30), nullable=False),
+    sa.Column('email', sa.String(length=255), nullable=False),
+    sa.Column('hashed_password', sa.String(length=128), nullable=False),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('user_name')
     )
     op.create_table('photos',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -56,5 +65,6 @@ def downgrade():
     op.drop_table('photo_tags')
     op.drop_table('comments')
     op.drop_table('photos')
+    op.drop_table('users')
     op.drop_table('tags')
     # ### end Alembic commands ###
