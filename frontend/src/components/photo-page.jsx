@@ -50,7 +50,6 @@ export default function PhotoPage() {
               <CommentBox />
             </div>
           </div>
-        </div>
       </main>
       <footer className="footer">our footer</footer>
     </div>

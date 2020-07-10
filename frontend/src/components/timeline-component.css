@@ -1,5 +1,5 @@
 .timeline-container{
-    width: 70rem;
+    width: 100%;
     height: 100%;
     display: flex;
     border-top: 0.1rem solid grey;
@@ -23,10 +23,6 @@
     }
 
 
-
-
-
-
   .info {
       align-self: center;
       max-width: 9rem;
@@ -37,13 +33,13 @@
       top: 7rem;
       color: white;
       text-decoration-style: none;
-      text-shadow: 0.5rem 1rem;
+      text-shadow: black 0.1rem 0.2rem;
     }
 
     .info a{
 
         color: white;
-        text-decoration-style: none;
+        text-decoration: none;
       }
 
   .follow {
