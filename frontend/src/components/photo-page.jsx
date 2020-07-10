@@ -5,8 +5,11 @@ import puppy1 from "./images/puppy1.jpg";
 // import Logout from './logout'
 import UserNameBox from "./username-box";
 import CommentBox from "./comments-component";
+import data from "./data.js";
 
-export default function PhotoPage() {
+export default function PhotoPage(props) {
+  console.log(props.match.params.id)
+  const puppy = data.puppies[props.match.params.id-1]
   return (
     <div className="grid-container">
       <header className="header">
@@ -17,40 +20,36 @@ export default function PhotoPage() {
           <input></input>
           <a href="/upload">Upload</a>
         </div>
-        {/* <div className="header-links">
+        <div className="header-links">
               <a href="/user">User</a>
               {/* <Logout/> */}
-          {/* </div> */}
+        </div>
         </header>
         <main className="main">
-          <div className="content">
+          <div className="content-photo">
             <div className="photo-main">
               <div className="link-return">
                 <a href="/puppyfeed">Go back to feed page</a>
               </div>
-              <img alt="puppy-pic" src="http://farm66.staticflickr.com/65535/50085236156_7e3a56d093.jpg"></img>
+              <img alt="puppy-pic" src={puppy.img}></img>
             </div>
+
             <div className="profile-main">
                 <UserNameBox />
+
             </div>
-            <img
-              alt="puppy-pic"
-              src="http://farm66.staticflickr.com/65535/50085236156_7e3a56d093.jpg"
-            ></img>
-          </div>
-          <div className="profile-main">
-            <UserNameBox />
-          </div>
-          <div className="comments-main">
-            <div>
-              <h2>Comments section</h2>
-              <CommentBox />
-              <CommentBox />
-              <CommentBox />
-              <CommentBox />
+
+            <div className="comments-main">
+              <div>
+                <h2>Comments section</h2>
+                  <CommentBox />
+                  <CommentBox />
+                  <CommentBox />
+                  <CommentBox />
+              </div>
             </div>
+
           </div>
-        </div>
       </main>
       <footer className="footer">our footer</footer>
     </div>

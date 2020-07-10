@@ -6,7 +6,15 @@
     width: 100%;
 }
 
-.picture{
+.picture-comment img{
+    align-self: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    border: 1rem solid white;
+    width: 8.5rem;
+    height: 8.5rem;
+    box-shadow: 0.3rem 0.3rem black;
     padding: 0.1rem;
 }
 

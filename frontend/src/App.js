@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { PrivateRoute, AuthRoute } from "./utils/routeUtils";
-import { loadToken, TOKEN_KEY } from "./actions/sessionActions";
-import Login from "./components/login-form";
+//import { loadToken, TOKEN_KEY } from "./actions/sessionActions";
+//import Login from "./components/login-form";
 // import Logout from "./components/logout";
 import PuppyFeed from "./components/puppyFeed";
 import LandingPage from "./components/landing-page";
@@ -13,35 +13,36 @@ import ProfilePage from "./components/profile-page";
 import Timeline from "./components/timeline-component";
 import Navbar from "./components/navbar";
 import SessionForm from "./components/login-form";
+import UserNameBox from "./components/username-box";
 
-const App = (props) => {
-  const { loadToken } = props;
+const App = () => {
+  // const { loadToken } = props;
 
-  useEffect(() => {
-    loadToken();
-  }, [loadToken]);
+  // useEffect(() => {
+  //   loadToken();
+  // }, [loadToken]);
 
-  let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
-  let access_token = localStorageToken ? localStorageToken : props.access_token;
+  // let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
+  // let access_token = localStorageToken ? localStorageToken : props.access_token;
 
-  let loggedIn = access_token ? true : false;
+  // let loggedIn = access_token ? true : false;
 
   // debugger
   return (
     <BrowserRouter>
-      {loggedIn ? <Route path="/" component={LandingPage} /> : null}
+      {/* {loggedIn ? <Route path="/" component={LandingPage} /> : null} */}
       <Switch>
-        <AuthRoute exact path="/" component={LandingPage} />
+        {/* <AuthRoute exact path="/" component={LandingPage} />
         <AuthRoute
           path="/login-form"
           component={SessionForm}
-          // loggedIn={loggedIn}
-        />
+          // loggedIn={loggedIn} */}
+        {/* /> */}
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/puppyfeed" component={PuppyFeed} />
-        <Route path="/photo-page" component={PhotoPage} />
+        <Route path="/photo-page/:id" component={PhotoPage} />
         <Route path="/profile-page" component={ProfilePage} />
-        <Route path="/container" component={Timeline} />
+        <Route path="/container" component={CommentBox} />
         <Route exact path="/" component={LandingPage} />
         {/* <PrivateRoute
           path="/puppyfeed"
@@ -63,16 +64,17 @@ const App = (props) => {
   );
 };
 
-const msp = (state) => {
-  return {
-    access_token: state.session.access_token,
-  };
-};
+// const msp = (state) => {
+//   return {
+//     access_token: state.session.access_token,
+//   };
+// };
 
-const mdp = (dispatch) => {
-  return {
-    loadToken: () => dispatch(loadToken()),
-  };
-};
+// const mdp = (dispatch) => {
+//   return {
+//     loadToken: () => dispatch(loadToken()),
+//   };
+// };
 
-export default connect(msp, mdp)(App);
+// export default connect(msp, mdp)(App);
+export default App;

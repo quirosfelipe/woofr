@@ -1,0 +1,97 @@
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr 5rem;
+    height: 100%;
+  }
+
+
+ .content{
+   display:grid;
+   grid-template-areas: "photo-main" "about-main" "comments-main" "contact-info";
+   grid-template-columns: 1fr;
+   grid-template-rows: 40rem 10rem auto auto;
+ }
+
+ .photo-main{
+   grid-area: photo-main;
+   width: 100%;
+   justify-content: center;
+   height: 100%;
+   padding: 1rem;
+  }
+
+  .link-return{
+      display:flex;
+      justify-content: flex-start;
+      padding-bottom: 1rem;
+      font-size: 1.3rem;
+
+  }
+
+
+  .link-return a{
+    text-decoration: none;
+}
+
+.link-return a:hover{
+    font-size: 1.8rem;
+    text-shadow: black 0.1rem 0.1rem;
+}
+
+.about-main{
+    box-sizing: border-box;
+    grid-area: about-main;
+    display:flex;
+
+    /* background-color: brown; */
+}
+
+.about-title h2{
+    padding: 0.5rem;
+    border-right: 0.1rem solid lightgray;
+    font-size: 2rem;
+
+}
+
+.about-title h5{
+    flex-wrap: wrap;
+    font-weight: lighter;
+    font-size: 1.5rem;
+
+
+}
+
+/*Creating photos section(profile-page)*/
+.comments-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.comments-main h3{
+    display: flex;
+    padding-top:2rem;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    border-top: 0.1rem solid grey;
+    border-bottom: 0.1rem solid grey;
+}
+
+.contact-info div{
+    display:flex;
+    padding: 0.5rem;
+}
