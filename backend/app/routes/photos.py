@@ -23,6 +23,13 @@ def get_user_photos(userId):
     return {'photos': photos}
 
 
+@bp.route('/select/<int:id>', methods=['GET'])
+def get_photo_byId(id):
+    photos = Photo.query.filter_by(id=id).all()
+    photos = [photo.to_dict() for photo in photos]
+    return {'photos': photos}
+
+
 @bp.route('/create', methods=["POST"])
 def create_photo():
     data = request.json
