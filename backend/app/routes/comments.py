@@ -8,7 +8,7 @@ bp = Blueprint('comments', __name__, url_prefix='/api/comments')
 # create - POST
 
 
-@bp.route('<int:photoId>', methods=["GET"])
+@bp.route('/<int:photoId>', methods=["GET"])
 def get_photo_comments(photoId):
     comments = Comment.query.filter_by(photoId=photoId).all()
     comments = [comment.to_dict() for comment in comments]

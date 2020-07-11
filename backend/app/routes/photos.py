@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from ..models import db
 from ..models.photos import Photo
+from sqlalchemy.orm import joinedload
 
 # Todo, get photo
 
@@ -23,11 +24,27 @@ def get_user_photos(userId):
     return {'photos': photos}
 
 
-@bp.route('/select/<int:id>', methods=['GET'])
-def get_photo_byId(id):
-    photos = Photo.query.filter_by(id=id).all()
-    photos = [photo.to_dict() for photo in photos]
-    return {'photos': photos}
+# @bp.route('/single/<int:id>', methods=['GET'])
+# def get_photo_byId(id):
+#     # photos = Photo.query.filter_by(id == id).all()
+#     # photos = [photo.to_dict() for photo in photos]
+#     # return {'photos': photos}
+#     return "I'm endpoint"
+
+
+# @bp.route('/photo/<int:id>', methods=["GET"])
+# def get_one_photo(id):
+#     photo = Photo.query.get(id)
+#     photo = photo.to_dict()
+#     return {'photo': photo}
+
+@bp.route('/photo/<int:id>', methods=["GET"])
+def get_one_photo(id):
+    photo = Photo.query.options(joinedload('comments')).get(id)
+    comments = [comment.to_dict() for comment in photo.comments]
+    photo = photo.to_dict()
+    payload = {'photo': photo, 'comments': comments}
+    return payload
 
 
 @bp.route('/create', methods=["POST"])
