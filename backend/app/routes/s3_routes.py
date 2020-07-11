@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, send_file, jsonify
-from ..aws.aws_s3 import list_files, download_file, upload_file
+from ..aws.aws_s3 import list_files, download_file, upload_file, get_photo
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
@@ -36,3 +36,10 @@ def download(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route("/aws-photo/<filename>", methods=['GET'])
+def photo(filenamme):
+    if request.method == 'GET':
+        photoUrl = get_photo(filename, BUCKET)
+
+        return photoUrl
