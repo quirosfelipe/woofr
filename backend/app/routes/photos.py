@@ -32,19 +32,20 @@ def get_user_photos(userId):
 #     return "I'm endpoint"
 
 
-# @bp.route('/photo/<int:id>', methods=["GET"])
-# def get_one_photo(id):
-#     photo = Photo.query.get(id)
-#     photo = photo.to_dict()
-#     return {'photo': photo}
-
 @bp.route('/photo/<int:id>', methods=["GET"])
 def get_one_photo(id):
-    photo = Photo.query.options(joinedload('comments')).get(id)
-    comments = [comment.to_dict() for comment in photo.comments]
+    photo = Photo.query.get(id)
     photo = photo.to_dict()
-    payload = {'photo': photo, 'comments': comments}
-    return payload
+    print('this is the photo', photo)
+    return {'photo': photo}
+
+# @bp.route('/photo/<int:id>', methods=["GET"])
+# def get_one_photo(id):
+#     photo = Photo.query.options(joinedload('comments')).get(id)
+#     comments = [comment.to_dict() for comment in photo.comments]
+#     photo = photo.to_dict()
+#     payload = {'photo': photo, 'comments': comments}
+#     return payload
 
 
 @bp.route('/create', methods=["POST"])

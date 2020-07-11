@@ -7,6 +7,7 @@ from app.config import Configuration
 from app.routes import session
 from app.routes import comments
 from app.routes import photos
+from app.routes import s3_routes
 from app.models import db
 
 if os.environ.get("FLASK_ENV") == 'production':
@@ -23,6 +24,7 @@ migrate = Migrate(app, db)
 app.register_blueprint(session.bp)
 app.register_blueprint(comments.bp)
 app.register_blueprint(photos.bp)
+app.register_blueprint(s3_routes.bp)
 
 
 @app.route('/', defaults={'path': ''})

@@ -40,7 +40,6 @@ export const loadToken = () => async (dispatch) => {
 export const login = (email, password) => async (dispatch) => {
 	console.log(email, password);
 	try {
-		// debugger;
 		console.log('retrieving');
 		console.log(JSON.stringify({ email, password }));
 		const response = await fetch(`http://localhost:5000/api/session`, {
