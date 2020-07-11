@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./photo-page.css";
 import { connect } from "react-redux";
-// import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
 // import puppy1 from "./images/puppy1.jpg";
 // import Logout from './logout'
 import UserNameBox from "./username-box";
@@ -43,16 +43,19 @@ class PhotoPage extends Component {
             </div>
 
             <div className="profile-main">
-              <UserNameBox />
+              <UserNameBox userInfo={this.props.photo} />
             </div>
 
             <div className="comments-main">
               <div>
                 <p>Comments section</p>
-                <CommentBox />
-                <CommentBox />
-                <CommentBox />
-                <CommentBox />
+                <ul className="comment-section-photo">
+                  {this.props.photo.comments.map((comment) => (
+                    <li key={comment.id}>
+                      <CommentBox comment={comment} />
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
