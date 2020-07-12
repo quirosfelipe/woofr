@@ -15,12 +15,12 @@ Users interact through a friendly interface that allows for authentication and f
 
 
 ## Technologies Used
-React
-Redux
-SQLAlchemy
-Flask
-wtforms
-Python3, HTML 5, CSS, jsx.
+* React
+* Redux
+* SQLAlchemy
+* Flask
+* wtforms
+* Python3, HTML 5, CSS, jsx.
 
 ## Screenshots
 
