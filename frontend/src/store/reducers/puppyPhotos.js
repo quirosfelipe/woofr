@@ -8,6 +8,10 @@ export const puppyAdded = (payload) => {
   return { type: "RECEIVE_PUPPY_PHOTO", payload };
 };
 
+export const myPuppy = (photos) => {
+  return { type: "MY_PUPPY_PHOTOS", photos };
+};
+
 //REDUCERS
 export const puppyPhotoReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
@@ -20,6 +24,10 @@ export const puppyPhotoReducer = (state = {}, action) => {
       let nextState = {};
       action.photos.forEach((photo) => (nextState[photo.id] = photo));
       return Object.assign(newState, nextState);
+    case "MY_PUPPY_PHOTOS":
+      let nextStat = {};
+      action.photos.forEach((photo) => (nextStat[photo.id] = photo));
+      return Object.assign(newState, nextStat);
     default:
       return state;
   }

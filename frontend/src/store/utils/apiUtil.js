@@ -1,5 +1,6 @@
 import { puppiesAdded } from "../reducers/puppyPhotos";
 import { puppyAdded } from "../reducers/puppyPhotos";
+import { myPuppy } from "../reducers/puppyPhotos";
 
 export const fetchPuppyPhotos = () => async (dispatch) => {
   const response = await fetch(`http://localhost:5000/api/photos`);
@@ -20,8 +21,9 @@ export const fetchPuppyPhoto = (id) => async (dispatch) => {
   dispatch(puppyAdded(payload));
 };
 
-// export const fetchPhotoComments = (id) => async(dispatch) => {
-//   const response = await fetch(`http://localhost:5000/api/photo/${id}`
-//   if (!response.ok) throw response;
-
-// }
+export const fetchPuppyOwners = (id) => async (dispatch) => {
+  const response = await fetch(`http://localhost:5000/api/photos/${id}`);
+  if (!response.ok) throw response;
+  const { photos } = await response.json();
+  dispatch(myPuppy(photos));
+};

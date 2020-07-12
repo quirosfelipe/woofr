@@ -1,4 +1,4 @@
-html{
+html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -9,94 +9,112 @@ body {
   height: 100vh;
 }
 
-#root{
+#root {
   height: 100%;
 }
 
 .grid-container {
   display: grid;
   grid-template-areas:
-  "header"
-  "main"
-  "footer";
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
 
-
-
-.header{
-
+.header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.4rem;
+  padding: 0.8rem;
   background-color: black;
   font-size: 0.5rem;
 }
 
-.woofr-logo a{
-  font-size: 2.5rem;
+.woofr-logo a {
+  font-size: 3.2rem;
   text-decoration: none;
+  color: salmon;
+  font-weight: bold;
+}
+
+.woofr-logo a:hover {
   color: white;
   font-weight: bold;
 }
 
-.woofr-logo a:hover{
-  color: orangered;
-  font-weight: bold;
-}
-
-.header-links a{
+.puppyfeed a {
+  font-size: 1.8rem;
   text-decoration: none;
-  color:white;
+  color: white;
+  font-weight: bold;
+  margin-left: 35px;
+}
+.puppyfeed a:hover {
+  text-decoration: none;
+  color: lightgrey;
+}
+.header-links a {
+  text-decoration: none;
+  color: white;
   font-size: 1.3rem;
 }
 
-.header-links a:hover{
+.header-links a:hover {
   text-decoration: none;
   color: orangered;
   font-weight: bold;
 }
+.logout-button {
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  padding: 8px 20px;
+}
+.logout-button:hover {
+  text-decoration: none;
+  color: lightgrey;
+}
 
-.search-bar a{
+.search-bar a {
   padding: 1rem;
   text-decoration: none;
-  color:white;
+  color: white;
   font-size: 1.3rem;
 }
 
-.search-bar a:hover{
+.search-bar a:hover {
   text-decoration: none;
   color: orangered;
   font-weight: bold;
 }
 
-.main{
+.main {
   /* background-image: url(https://st2.depositphotos.com/5746754/9893/v/950/depositphotos_98936132-stock-illustration-repeating-pattern-with-grey-paw.jpg); */
   /* background-size: cover; */
   grid-area: main;
   padding: 1rem;
 }
 
-.main::before{
-
+.main::before {
   opacity: 0.3;
   background-size: cover;
 }
 
-.footer{
+.footer {
   grid-area: footer;
   background-color: white;
-  color: black
+  color: black;
 }
 
 /* Creating the containers*/
 
-
-.photos{
+.photos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,49 +123,48 @@ body {
   flex-wrap: wrap;
 }
 
-
-.photos li{
+.photos li {
   flex: 0 1 30rem;
   margin: 1rem;
   height: 100%;
-  border: 0.1rem pink solid;
-  border-radius: 1.5rem;
+  /* border: 0.1rem pink solid; */
+  /* border-radius: 1.5rem; */
   background-color: white;
-  box-shadow: 0.2rem 0.2rem pink;
+  /* box-shadow: 0.2rem 0.2rem pink; */
 }
 
-.photos li:hover{
-  box-shadow: 0.6rem 1.2rem red;
-  transform: translate(0.2rem,0.2rem);
+.photos li:hover {
+  /* box-shadow: 0.6rem 1.2rem red; */
+  transform: translate(0.2rem, 0.2rem);
 }
 
-.photo{
+/* .photo {
   padding-top: 1.2rem;
   padding-bottom: 1rem;
-}
+} */
 
-.photo-header{
+.photo-header {
   display: flex;
   justify-content: space-between;
 }
 
-.photo-owner{
+.photo-owner {
   padding: 0.5rem;
   font-size: 1rem;
 }
 
-.photo-title{
+.photo-title {
   padding: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.photo-description{
+.photo-description {
   padding: 0.3rem;
   font-size: 1rem;
 }
 
-.photo-img{
+.photo-img {
   max-width: 30rem;
   max-height: 40rem;
 }
