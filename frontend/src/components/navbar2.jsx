@@ -1,24 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./navbar2.css";
-import Search from "./search";
-
 const Navbar2 = () => (
-  <div className="landing-page-navbar2 positioned">
-    <div className="landing-page-navbar__header">
-      <Link className="landing-page-navbar__header-logo" to="/">
-        <h2 className="woofr">
-          <strong>woofr</strong>
-        </h2>
+  <header className="header">
+    <div>
+      <span className="woofr-logo">
+        <a href="/">woofr</a>
+      </span>
+      <span className="puppyfeed">
+        <a href="/puppyfeed">PuppyFeed</a>
+      </span>
+      <span className="puppyfeed">
+        <a href="/profile-page">You</a>
+      </span>
+    </div>
+
+    {/* <div className="search-bar">
+      <input></input>
+    </div> */}
+    {/* <a href="/upload">Upload</a> */}
+    <div className="header-links">
+      <Link className="landing-page-navbar__header login-button" to="/">
+        <button className="logout-button" type="submit">
+          Logout
+        </button>
       </Link>
     </div>
-    <div className="landing-page-navbar__header">
-      <Search />
-    </div>
-    {/* <Link className="landing-page-navbar__header login-button">
-      <Logout />
-    </Link> */}
-  </div>
+  </header>
 );
 export default Navbar2;

@@ -22,7 +22,7 @@ class PuppyFeed extends Component {
             <a href="/upload">Upload</a>
           </div>
           <div className="header-links">
-            <a href="/user">User</a>
+            <a href="/profile-page">User</a>
             {/* <Logout/> */}
           </div>
         </header>

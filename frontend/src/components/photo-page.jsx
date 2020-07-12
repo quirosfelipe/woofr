@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
 // import Logout from './logout'
 import UserNameBox from "./username-box";
 import CommentBox from "./comments-component";
+import CommentForm from "./comment-form";
 import { getPhotoById } from "../store/reducers/puppyPhotos";
 import { fetchPuppyPhoto } from "../store/utils/apiUtil";
 
@@ -14,6 +15,7 @@ class PhotoPage extends Component {
     this.props.fetchPuppyPhoto(this.props.match.params.id);
   }
   render() {
+    const photoId = this.props.match.params.id;
     console.log("props", this.props);
     if (!this.props.photo) {
       return null;
@@ -29,7 +31,7 @@ class PhotoPage extends Component {
             <a href="/upload">Upload</a>
           </div>
           <div className="header-links">
-            <a href="/user">User</a>
+            <a href="/profile-page">User</a>
             {/* <Logout/> */}
           </div>
         </header>
@@ -56,6 +58,9 @@ class PhotoPage extends Component {
                     </li>
                   ))}
                 </ul>
+                <div>
+                  <CommentForm props={photoId} />
+                </div>
               </div>
             </div>
           </div>
