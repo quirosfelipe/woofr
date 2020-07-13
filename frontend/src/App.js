@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
 // import { connect } from "react-redux";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import { PrivateRoute, AuthRoute } from './utils/routeUtils';
 //import { loadToken, TOKEN_KEY } from "./actions/sessionActions";
 //import Login from "./components/login-form";
 // import Logout from "./components/logout";
-import PuppyFeed from './components/puppyFeed';
-import LandingPage from './components/landing-page';
-import PhotoPage from './components/photo-page';
-import CommentBox from './components/comments-component';
-import ProfilePage from './components/profile-page';
+import PuppyFeed from "./components/puppyFeed";
+import LandingPage from "./components/landing-page";
+import PhotoPage from "./components/photo-page";
+import CommentBox from "./components/comments-component";
+import ProfilePage from "./components/profile-page";
 // import Timeline from './components/timeline-component';
-// import Navbar from './components/navbar';
+import CommentForm from "./components/comment-form";
 // import SessionForm from './components/login-form';
 // import UserNameBox from './components/username-box';
 import LoginForm from './components/login-form';
 import Upload from './components/upload';
 
 const App = () => {
-	// const { loadToken } = props;
+  // const { loadToken } = props;
 
-	// useEffect(() => {
-	//   loadToken();
-	// }, [loadToken]);
+  // useEffect(() => {
+  //   loadToken();
+  // }, [loadToken]);
 
-	// let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
-	// let access_token = localStorageToken ? localStorageToken : props.access_token;
+  // let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
+  // let access_token = localStorageToken ? localStorageToken : props.access_token;
 
-	// let loggedIn = access_token ? true : false;
+  // let loggedIn = access_token ? true : false;
 
 	return (
 		<BrowserRouter>
@@ -62,9 +62,9 @@ const App = () => {
           component={CommentBox}
           loggedIn={loggedIn}
         /> */}
-			</Switch>
-		</BrowserRouter>
-	);
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 // const msp = (state) => {

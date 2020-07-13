@@ -1,6 +1,9 @@
 import { puppiesAdded } from '../reducers/puppyPhotos';
 import { puppyAdded } from '../reducers/puppyPhotos';
 import { photoUploaded } from '../reducers/aws';
+import { puppiesAdded } from '../reducers/puppyPhotos';
+import { puppyAdded } from '../reducers/puppyPhotos';
+import { myPuppy } from '../reducers/puppyPhotos';
 
 export const fetchPuppyPhotos = () => async (dispatch) => {
 	const response = await fetch(`http://localhost:5000/api/photos`);
@@ -38,4 +41,11 @@ export const postToAws = (formData) => async (dispatch) => {
 		const { message } = response.json();
 		return dispatch(photoUploaded(message));
 	}
+};
+
+export const fetchPuppyOwners = (id) => async (dispatch) => {
+	const response = await fetch(`http://localhost:5000/api/photos/${id}`);
+	if (!response.ok) throw response;
+	const { photos } = await response.json();
+	dispatch(myPuppy(photos));
 };

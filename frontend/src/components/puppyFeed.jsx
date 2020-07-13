@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./puppyFeed.css";
 import { Link } from "react-router-dom";
-import { fetchPuppyPhotos } from "../store/utils/apiUtil"; // api to call get all puppy photos
-import { getPhotos } from "../store/reducers/puppyPhotos"; // selector to get photos from redux store
+import { fetchPuppyPhotos } from "../store/utils/apiUtil"; //api to call get all puppy photos
+import { getPhotos } from "../store/reducers/puppyPhotos"; // selector to get photos from redux stor
 
 class PuppyFeed extends Component {
   componentDidMount() {
@@ -22,7 +22,7 @@ class PuppyFeed extends Component {
             <a href="/upload">Upload</a>
           </div>
           <div className="header-links">
-            <a href="/user">User</a>
+            <a href="/profile-page">User</a>
             {/* <Logout/> */}
           </div>
         </header>

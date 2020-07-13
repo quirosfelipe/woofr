@@ -27,8 +27,12 @@ code {
     monospace;
 }
 
-div{
+div {
   box-sizing: border-box;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
 }
 
 /* ////

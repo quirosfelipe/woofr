@@ -18,6 +18,7 @@ def get_photo_comments(photoId):
 @bp.route('', methods=["POST"])
 def create_comment():
     data = request.json
+    print("this is the data", data)
     try:
         comment = Comment(
             userId=data['userId'], photoId=data['photoId'], comment=data['comment'])
