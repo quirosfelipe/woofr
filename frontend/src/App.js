@@ -15,6 +15,7 @@ import CommentForm from "./components/comment-form";
 // import SessionForm from './components/login-form';
 // import UserNameBox from './components/username-box';
 import LoginForm from "./components/login-form";
+import SignupForm from "./components/signup-form";
 
 const App = () => {
   // const { loadToken } = props;
@@ -41,6 +42,7 @@ const App = () => {
         {/* /> */}
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/login" component={LoginForm} />
+        <Route path="/signup" component={SignupForm} />
         <Route path="/puppyfeed" component={PuppyFeed} />
         <Route path="/photo-page/:id" component={PhotoPage} />
         <Route path="/profile-page" component={ProfilePage} />

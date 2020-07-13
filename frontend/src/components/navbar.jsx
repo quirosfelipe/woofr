@@ -11,6 +11,11 @@ const Navbar = () => (
       </span>
     </div>
     <div className="header-links">
+      <Link className="landing-page-navbar__header" to="/signup">
+        <button className="signup-button" type="submit">
+          Sign-Up
+        </button>
+      </Link>
       <Link className="landing-page-navbar__header login-button" to="/login">
         <button className="login-button" type="submit">
           Login
