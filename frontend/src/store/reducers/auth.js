@@ -53,7 +53,7 @@ export const submitComment = (comment, userId, photoId) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, photoId, comment }),
     });
-    console.log("done");
+    // console.log("done");
     //     console.log("failed");
     //     if (response.ok) {
     //       console.log("here");
@@ -110,17 +110,21 @@ export const logout = () => async (dispatch, getState) => {
   }
 };
 
-export const signup = (email, password) => async (dispatch) => {
+export const signup = (user_name, email, password) => async (dispatch) => {
   const response = await fetch(`${baseUrl}/session/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ user_name, email, password }),
   });
 
   if (response.ok) {
-    const { token } = await response.json();
-    window.localStorage.setItem(TOKEN_KEY, token);
-    dispatch(setToken(token));
+    const { access_token, user } = await response.json();
+
+    window.localStorage.setItem(USER_EMAIL, user.email);
+    window.localStorage.setItem(USER_NAME, user.user_name);
+    window.localStorage.setItem(USER_ID, user.id);
+    window.localStorage.setItem(TOKEN_KEY, access_token);
+    dispatch(setToken(access_token, user));
     window.location.href = "/puppyfeed";
   }
 };

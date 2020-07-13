@@ -63,29 +63,10 @@ class ProfilePage extends Component {
                 <ul className="photos">
                   {this.props.photos.map((photo) => (
                     <PhotoBox photo={photo} className="photo" />
-                    // <li key={photo.id}>
-                    //   <Link to={`/photo-page/${photo.id}`}></Link>
-                    //   <div className="photo">
-                    //     <div className="photo-header">
-                    //       <div className="photo-owner">{photo.userId}</div>
-                    //       <div className="photo-title">{photo.photoName}</div>
-                    //     </div>
-                    //     <img
-                    //       alt="puppy 1"
-                    //       className="photo-img"
-                    //       src={photo.photoUrl}
-                    //     ></img>
-                    //     <div className="photo-description">description 1</div>
-                    //   </div>
-                    // </li>
                   ))}
                 </ul>
               </div>
             </div>
-            {/* <div className="contact-info">
-              <div>JOINED: 1994</div>
-              <div>EMAIL: {user_email}</div>
-            </div> */}
           </div>
         </main>
         <footer className="footer">woofr © copyright 2020</footer>

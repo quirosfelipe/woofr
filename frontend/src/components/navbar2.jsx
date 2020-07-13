@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cloud from "../static/cloud.png";
 
 const Navbar2 = () => (
   <header className="header">
@@ -10,8 +11,11 @@ const Navbar2 = () => (
       <span className="puppyfeed">
         <a href="/puppyfeed">PuppyFeed</a>
       </span>
-      <span className="puppyfeed">
+      <span className="puppyfeed pup">
         <a href="/profile-page">You</a>
+      </span>
+      <span className="upload-icon">
+        <img className="upload-icon" src={cloud} />
       </span>
     </div>
 

@@ -29,7 +29,7 @@ const CommentForm = (props) => {
         <form className="login-container__form" onSubmit={handleSubmit}>
           <textarea
             rows="8"
-            cols="30"
+            cols="50"
             className="login-container__form-email"
             type="text"
             placeholder="Comment this pic!"
