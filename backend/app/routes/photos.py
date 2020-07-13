@@ -4,7 +4,6 @@ from ..models.photos import Photo
 
 from sqlalchemy.orm import joinedload
 
-# Todo, get photo
 
 bp = Blueprint('photos', __name__, url_prefix='/api/photos')
 
