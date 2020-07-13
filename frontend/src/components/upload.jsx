@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { successMessage } from '../store/reducers/aws';
 import { postToAws } from '../store/utils/apiUtil';
+// import { postPhoto } from '../store/utils/apiUtil';
+
+const user_id = window.localStorage.getItem('USER_ID');
 
 class Upload extends Component {
 	state = {
@@ -27,10 +30,19 @@ class Upload extends Component {
 	handleUpload = (e) => {
 		e.preventDefault();
 		const formData = new FormData();
-		console.log('state info', this.state.photoFile);
+		console.log(
+			'state info',
+			this.state.description,
+			this.state.photoName,
+			this.state.photoFile
+		);
 		formData.append('file', this.state.photoFile);
-		formData.append('id', this.props.match.params.id);
-		this.props.postToAws(formData); //userId
+		this.props.postToAws(
+			formData,
+			user_id,
+			this.state.description,
+			this.state.photoName
+		);
 	};
 
 	render() {
@@ -72,7 +84,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-	postToAws: (file, id) => dispatch(postToAws(file, id)),
+	postToAws: (file, id, description, photoName) =>
+		dispatch(postToAws(file, id, description, photoName)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Upload);
