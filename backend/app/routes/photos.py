@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from ..models import db
 from ..models.photos import Photo
-from ..aws.aws_s3 import url
+
 from sqlalchemy.orm import joinedload
 
 # Todo, get photo
@@ -48,12 +48,11 @@ def get_one_photo(id):
     return payload
 
 
-
-
 @bp.route('/create', methods=["POST"])
 def create_photo():
     data = request.json
-    print(data['userId'])
+    print('this is the data', data['userId'])
+
     try:
         photo = Photo(
             userId=data['userId'], description=data['description'], photoName=data['photoName'], photoUrl=data['photoUrl'])

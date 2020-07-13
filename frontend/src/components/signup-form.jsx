@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { login } from "../store/reducers/auth";
+import { signup } from "../store/reducers/auth";
 import { Link, Redirect } from "react-router-dom";
 import "./login-form.css";
 
 const SignupForm = (props) => {
-  const [user, setUser] = useState("");
+  const [user_name, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUserChange = (e) => {
-    setUser(e.target.value);
+    setUserName(e.target.value);
   };
 
   const handleEmailChange = (e) => {
@@ -22,12 +22,13 @@ const SignupForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.login(email, password);
+    props.signup(user_name, email, password);
   };
 
   if (props.access_token) {
     return <Redirect to="/puppyfeed" />;
   } else {
+    console.log("This is the sign up request", props);
     return (
       <div className="login-page">
         <div className="container">
@@ -76,7 +77,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: (email, password) => dispatch(login(email, password)),
+    signup: (user_name, email, password) =>
+      dispatch(signup(user_name, email, password)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

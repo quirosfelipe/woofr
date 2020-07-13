@@ -3,16 +3,15 @@ from ..config import S3_KEY, S3_SECRET, S3_BUCKET
 from ..models.photos import Photo
 
 s3 = boto3.client(
-   "s3",
-   aws_access_key_id=S3_KEY,
-   aws_secret_access_key=S3_SECRET
+    "s3",
+    aws_access_key_id=S3_KEY,
+    aws_secret_access_key=S3_SECRET
 )
 
-url = ''
 
 def upload_file_to_s3(file, userId, bucket_name, acl="public-read"):
     print('bucket and file', file, bucket_name)
-    
+
     try:
 
         s3.upload_fileobj(
@@ -29,6 +28,6 @@ def upload_file_to_s3(file, userId, bucket_name, acl="public-read"):
         # This is a catch all exception, edit this part to fit your needs.
         print("Something Happened: ", e)
         return e
-    photoUrl = "{}{}".format('https://woofr.s3-us-west-1.amazonaws.com/', file.filename)
+    photoUrl = "{}{}".format(
+        'https://woofr.s3-us-west-1.amazonaws.com/', file.filename)
     return photoUrl
-

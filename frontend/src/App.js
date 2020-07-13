@@ -48,7 +48,7 @@ const App = () => {
         <Route path="/profile-page" component={ProfilePage} />
         <Route path="/container" component={CommentForm} />
         <Route exact path="/" component={LandingPage} />
-        <Route path="/upload/:id" component={Upload} />
+        <Route path="/upload" component={Upload} />
         {/* <PrivateRoute
           path="/puppyfeed"
           component={PuppyFeed}
