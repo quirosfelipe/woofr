@@ -31,7 +31,7 @@ class PhotoPage extends Component {
 							{/* <div className="link-return">
                 <a href="/puppyfeed">Go back to feed page</a>
               </div> */}
-							<img alt='puppy-pic' src={this.props.photo.photo.photoUrl}></img>
+							<img alt='puppy-pic' src={this.props.photo.photoUrl}></img>
 						</div>
 
 						<div className='profile-main'>
