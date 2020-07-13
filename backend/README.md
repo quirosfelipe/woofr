@@ -23,6 +23,21 @@ Users interact through a friendly interface that allows for authentication and f
 * Python3, HTML 5, CSS, jsx.
 
 ## Screenshots
+* Landing Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/landing-page.png)
 
+* Login Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/login.png)
 
+* Feed Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/puppy-feed.png)
+
+* Photo Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/photo-page.png)
+
+* Profile Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/profile-page.png)
+
+* Upload Page
+![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/upload.png)
 
