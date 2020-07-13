@@ -1,2 +1,3 @@
 /node_modules
 /app/aws/keys.js
+.env
