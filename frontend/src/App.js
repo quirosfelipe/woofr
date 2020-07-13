@@ -16,6 +16,7 @@ import CommentForm from "./components/comment-form";
 // import UserNameBox from './components/username-box';
 import LoginForm from "./components/login-form";
 import SignupForm from "./components/signup-form";
+import Upload from "./components/upload";
 
 const App = () => {
   // const { loadToken } = props;
@@ -29,7 +30,6 @@ const App = () => {
 
   // let loggedIn = access_token ? true : false;
 
-  // debugger
   return (
     <BrowserRouter>
       {/* {loggedIn ? <Route path="/" component={LandingPage} /> : null} */}
@@ -48,6 +48,7 @@ const App = () => {
         <Route path="/profile-page" component={ProfilePage} />
         <Route path="/container" component={CommentForm} />
         <Route exact path="/" component={LandingPage} />
+        <Route path="/upload/:id" component={Upload} />
         {/* <PrivateRoute
           path="/puppyfeed"
           component={PuppyFeed}

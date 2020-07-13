@@ -68,16 +68,15 @@ export const submitComment = (comment, userId, photoId) => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-  console.log(email, password);
-  try {
-    // debugger;
-    console.log("retrieving");
-    console.log(JSON.stringify({ email, password }));
-    const response = await fetch(`http://localhost:5000/api/session`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+	console.log(email, password);
+	try {
+		console.log('retrieving');
+		console.log(JSON.stringify({ email, password }));
+		const response = await fetch(`http://localhost:5000/api/session`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ email, password }),
+		});
 
     console.log("failed");
     if (response.ok) {
