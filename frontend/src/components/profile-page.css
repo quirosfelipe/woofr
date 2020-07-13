@@ -5,22 +5,34 @@
     "main"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 8rem 1fr 5rem;
+  grid-template-rows: 8rem 1fr 4rem;
+  /* width: 100%; */
   height: 100%;
+  background-color: rgb(222, 222, 222);
 }
 
 .content {
   display: grid;
   grid-template-areas: "photo-main" "about-main" "comments-main" "contact-info";
   grid-template-columns: 1fr;
-  grid-template-rows: 40rem 10rem auto auto;
+  grid-template-rows: 35rem 10rem auto auto;
+  background-color: rgb(222, 222, 222);
 }
-
+.photo {
+  background-color: rgb(222, 222, 222);
+  width: auto;
+  width: 100%;
+  height: 100%;
+}
+/* .main {
+  width: 100%;
+} */
 .photo-main {
   grid-area: photo-main;
   width: 100%;
   justify-content: center;
   height: 100%;
+
   /* padding: 1rem; */
 }
 
@@ -44,30 +56,39 @@
   box-sizing: border-box;
   grid-area: about-main;
   display: flex;
-
+  padding: 0px 35px;
   /* background-color: brown; */
 }
-
 .about-title h2 {
   /* padding: 0.5rem; */
-  border-right: 0.1rem solid lightgray;
+  /* border-right: 0.1rem solid lightgray; */
   font-size: 2rem;
+  text-align: left;
+}
+.about-title h3 {
+  /* padding: 0.5rem; */
+  /* border-right: 0.1rem solid lightgray; */
+  font-size: 2rem;
+  text-align: left;
 }
 
-.about-title h5 {
+.about-title h3 {
   flex-wrap: wrap;
   font-weight: lighter;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 /*Creating photos section(profile-page)*/
 .comments-main {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   list-style-type: none;
   /* padding: 1rem; */
   flex-wrap: wrap;
+  margin-top: 7rem;
+  padding: 0px 35px;
+  background-color: rgb(222, 222, 222);
 }
 
 .comments-main h3 {
@@ -87,4 +108,8 @@
 .contact-info div {
   display: flex;
   padding: 0.5rem;
+}
+
+.content-photo {
+  background-color: rgb(222, 222, 222);
 }

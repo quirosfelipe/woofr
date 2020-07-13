@@ -22,6 +22,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
+  background-color: rgb(222, 222, 222);
 }
 
 .header {
@@ -94,11 +95,12 @@ body {
   font-weight: bold;
 }
 
-.main {
+.puppy-main {
   /* background-image: url(https://st2.depositphotos.com/5746754/9893/v/950/depositphotos_98936132-stock-illustration-repeating-pattern-with-grey-paw.jpg); */
   /* background-size: cover; */
   grid-area: main;
   padding: 1rem;
+  background-color: rgb(222, 222, 222);
 }
 
 .main::before {
@@ -121,6 +123,7 @@ body {
   list-style-type: none;
   padding: 1rem;
   flex-wrap: wrap;
+  background-color: rgb(222, 222, 222);
 }
 
 .photos li {
@@ -129,8 +132,9 @@ body {
   height: 100%;
   /* border: 0.1rem pink solid; */
   /* border-radius: 1.5rem; */
-  background-color: white;
+
   /* box-shadow: 0.2rem 0.2rem pink; */
+  background-color: rgb(222, 222, 222);
 }
 
 .photos li:hover {
@@ -168,3 +172,22 @@ body {
   max-width: 30rem;
   max-height: 40rem;
 }
+
+/* .photo {
+  float: left;
+  width: 25%;
+  position: relative;
+  padding: 1px;
+  min-height: 100px;
+
+  overflow: hidden;
+}
+.photos li img {
+  max-width: 100%;
+  display: block;
+  position: absolute;
+  max-height: 100px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+} */

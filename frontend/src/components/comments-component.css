@@ -1,24 +1,25 @@
-.comment-container{
-    display:flex;
-    justify-content: flex-start;
-    border-top: 0.1rem solid lightgrey;
+.comment-container {
+  display: flex;
+  justify-content: flex-start;
+  /* border-top: 0.1rem solid lightgrey; */
 
-    width: 100%;
+  width: 100%;
 }
 
-.picture-comment img{
-    align-self: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 50%;
-    border: 1rem solid white;
-    width: 8.5rem;
-    height: 8.5rem;
-    box-shadow: 0.3rem 0.3rem black;
-    padding: 0.1rem;
+.picture-comment img {
+  align-self: center;
+  justify-content: start;
+  position: relative;
+  border-radius: 50%;
+  /* border: 1rem solid white; */
+  width: 4.5rem;
+  height: 4.5rem;
+  /* box-shadow: 0.3rem 0.3rem black; */
+  padding: 0.1rem;
 }
 
-.comment{
-    padding: 2rem;
-
+.comment {
+  padding: 2.3rem;
+  text-align: right;
+  background-color: rgb(193, 192, 192);
 }

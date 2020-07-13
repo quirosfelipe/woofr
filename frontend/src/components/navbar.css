@@ -1,22 +1,8 @@
-.landing-page-navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding-left: 20px;
-  padding-right: 20px;
-  position: absolute;
-  width: 98%;
-  height: 7%;
-  top: 0px;
-}
-
-.landing-page-navbar__header {
-  margin: 0px;
-  align-self: center;
-  border-radius: 15%;
+.nav-bar {
+  margin-top: -70px;
 }
 .login-button {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(220, 120, 109);
   color: white;
   width: 80px;
   height: 40px;
@@ -26,29 +12,6 @@
 }
 
 .login-button:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
   cursor: pointer;
-}
-
-.landing-page-navbar__header-logo {
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.landing-page-navbar__header-logo > h1 {
-  margin: 0px;
-}
-
-.landing-page-navbar__search {
-  align-self: center;
-}
-
-.landing-page-navbar__login {
-  align-self: center;
-}
-.woofr {
-  font-size: 35px;
-  color: lightsalmon;
 }
