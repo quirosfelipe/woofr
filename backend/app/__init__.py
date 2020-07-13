@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request
+from flask import Flask, send_from_directory, request, jsonify
 from flask_migrate import Migrate
 from flask_cors import CORS
 import os
@@ -8,6 +8,7 @@ from app.routes import session
 from app.routes import comments
 from app.routes import photos
 from app.models import db
+from app.routes.photos import *
 # from app.aws import s3_routes
 
 from app.aws.aws_s3 import *
@@ -38,8 +39,8 @@ def catch_all(path):
     else:
         return send_from_directory(os.path.join(path_dir), 'index.html')
 
-@app.route("/api/upload", methods=['POST'])
-def upload_file():
+@app.route("/api/<userId>/upload", methods=['POST'])
+def upload_file(userId):
 
 	# A
     if "file" not in request.files:
@@ -47,7 +48,8 @@ def upload_file():
 
 	# B
     file = request.files["file"]
-    
+    print('this is the request', request.data)
+   
     """
         These attributes are also available
 
@@ -61,8 +63,9 @@ def upload_file():
     if file:
         # file.filename = secure_filename(file.filename)
         print('this is the file', file)
-        output = upload_file_to_s3(file, 'woofr')
-        return str(output)
+        output = upload_file_to_s3(file,userId, 'woofr')
+        print('this is the output', str(output))
+        return {'photoUrl':str(output)}
 
     else:
         print('something went wrong')

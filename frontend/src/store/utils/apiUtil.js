@@ -23,20 +23,35 @@ export const fetchPuppyPhoto = (id) => async (dispatch) => {
 	dispatch(puppyAdded(payload));
 };
 
-// export const fetchPhotoComments = (id) => async(dispatch) => {
-//   const response = await fetch(`http://localhost:5000/api/photo/${id}`
-//   if (!response.ok) throw response;
+// export const postPhoto = (userId, description, photoName) => async (
+// 	dispatch
+// ) => {
+// 	const response = await fetch(`http://localhost:5000/api/photos/create`, {
+// 		method: 'POST',
+// 		headers: { 'Content-Type': 'application/json' },
+// 		body: JSON.stringify({ userId, description, photoName }),
+// 	});
+// 	if (!response.ok) throw response;
+// 	console.log('done');
+// };
 
-// }
-export const postToAws = (formData) => async (dispatch) => {
-	console.log('in the aws route');
-	const response = await fetch('http://localhost:5000/api/upload', {
+export const postToAws = (formData, userId, description, photoName) => async (
+	dispatch
+) => {
+	console.log('in the aws route', description, photoName);
+	let response = await fetch(`http://localhost:5000/api/${userId}/upload`, {
 		method: 'POST',
-		// headers: { 'Content-Type': 'multipart/form-data' },
 		body: formData,
 	});
 	if (response.ok) {
-		const { message } = response.json();
+		const { photoUrl } = await response.json();
+		console.log('photourl -> ', photoUrl);
+		const message = 'upload success';
+		await fetch(`http://localhost:5000/api/photos/create`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ userId, description, photoName, photoUrl }),
+		});
 		return dispatch(photoUploaded(message));
 	}
 };
