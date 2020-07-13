@@ -1,8 +1,6 @@
 import { puppiesAdded } from '../reducers/puppyPhotos';
 import { puppyAdded } from '../reducers/puppyPhotos';
 import { photoUploaded } from '../reducers/aws';
-import { puppiesAdded } from '../reducers/puppyPhotos';
-import { puppyAdded } from '../reducers/puppyPhotos';
 import { myPuppy } from '../reducers/puppyPhotos';
 
 export const fetchPuppyPhotos = () => async (dispatch) => {
