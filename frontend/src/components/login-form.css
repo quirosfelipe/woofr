@@ -11,20 +11,21 @@
   justify-content: center;
   align-items: center;
 
-  /* position: relative; */
+  position: relative;
 }
 
 .login-container {
   display: flex;
   border: none;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  background-color: white;
+
   margin-left: 20px;
   margin-right: 30px;
   padding: 20px;
   height: 22rem;
+  background-color: white;
 }
 
 .login-container__form-email {

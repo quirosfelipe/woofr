@@ -6,18 +6,19 @@
   border-bottom: 0.1rem solid grey; */
   height: 30rem;
   padding: 0.5rem;
-  background-image: url(http://www.doggiedropinn.com/images/banner-dog-grouping.jpg);
+  background-image: url(https://www.hartz.com/wp-content/uploads/revslider/dog-page-hero/Dog_Category_Header_Image.png);
 }
 
 .picture img {
   align-self: center;
   justify-content: center;
   position: relative;
-  top: 18rem;
+  top: 15rem;
+  left: 8rem;
   border-radius: 50%;
-  border: 1rem solid white;
-  width: 8.5rem;
-  height: 8.5rem;
+  /* border: 0.1rem solid white; */
+  width: 13.8rem;
+  height: 12rem;
   /* box-shadow: 0.1rem 0.1rem rgb(226, 130, 130); */
   padding: 0;
 }
@@ -29,10 +30,12 @@
   padding: 1rem;
   box-sizing: border-box;
   position: relative;
-  top: 7rem;
-  color: white;
+  top: 10rem;
+  left: 9rem;
+  color: grey;
+  font-size: 2rem;
   text-decoration-style: none;
-  text-shadow: 0.1rem 0.1rem salmon;
+  /* text-shadow: 0.1rem 0.1rem salmon; */
 }
 
 .info a {

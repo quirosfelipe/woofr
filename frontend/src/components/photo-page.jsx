@@ -9,6 +9,8 @@ import CommentBox from "./comments-component";
 import CommentForm from "./comment-form";
 import { getPhotoById } from "../store/reducers/puppyPhotos";
 import { fetchPuppyPhoto } from "../store/utils/apiUtil";
+import NavBar2 from "./navbar2";
+import Navbar2 from "./navbar2";
 
 class PhotoPage extends Component {
   componentDidMount() {
@@ -21,26 +23,14 @@ class PhotoPage extends Component {
       return null;
     }
     return (
-      <div className="grid-container">
-        <header className="header">
-          <div className="woofr-logo">
-            <a href="/">woofr</a>
-          </div>
-          <div className="search-bar">
-            <input></input>
-            <a href="/upload">Upload</a>
-          </div>
-          <div className="header-links">
-            <a href="/profile-page">User</a>
-            {/* <Logout/> */}
-          </div>
-        </header>
+      <div className="grid-container-photo">
+        <Navbar2 />
         <main className="main">
           <div className="content-photo">
-            <div className="photo-main">
-              <div className="link-return">
+            <div className="photo-main photo-main2">
+              {/* <div className="link-return">
                 <a href="/puppyfeed">Go back to feed page</a>
-              </div>
+              </div> */}
               <img alt="puppy-pic" src={this.props.photo.photo.photoUrl}></img>
             </div>
 
@@ -50,7 +40,7 @@ class PhotoPage extends Component {
 
             <div className="comments-main">
               <div>
-                <p>Comments section</p>
+                <p className="align-comments">Comments</p>
                 <ul className="comment-section-photo">
                   {this.props.photo.comments.map((comment) => (
                     <li key={comment.id}>
@@ -65,7 +55,7 @@ class PhotoPage extends Component {
             </div>
           </div>
         </main>
-        <footer className="footer">our footer</footer>
+        <footer className="footer-photo">woofr © copyright 2020</footer>
       </div>
     );
   }

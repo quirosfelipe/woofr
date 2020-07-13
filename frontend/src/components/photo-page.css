@@ -1,3 +1,6 @@
+.grid-container-photo {
+  background-color: #212124;
+}
 .content-photo {
   display: grid;
   grid-template-areas:
@@ -8,14 +11,15 @@
   grid-template-rows: 50rem 10rem auto;
 }
 
-.photo-main {
+.photo-main2 {
   grid-area: photo-main;
   width: 60rem;
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* max-width: 50rem;
-   max-height: 40rem; */
+  background-color: #212124;
+  /* max-width: 50em;
+  max-height: 40em; */
 }
 
 .photo-main img {
@@ -41,7 +45,24 @@
 .comments-main {
   grid-area: comments-main;
 }
-
+.comment {
+  max-width: 70%;
+  margin: 20px 0px 10px 100px;
+  /* margin-left: 100px;
+  margin-top: 2px; */
+  background-color: white;
+  width: 100%;
+}
 .comment-section-photo {
   list-style-type: none;
+  /* align-self: left; */
+}
+.align-comments {
+  text-align: center;
+}
+.footer-photo {
+  height: 40px;
+  color: white;
+  text-align: center;
+  justify-self: center;
 }

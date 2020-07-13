@@ -46,24 +46,20 @@ class ProfilePage extends Component {
             </div>
             <div className="about-main">
               <div className="about-title">
-                <h2>Photographer's Bio</h2>
-                <h5>
-                  Elvis Aaron Presley (January 8, 1935 – August 16, 1977), also
-                  known simply as Elvis, was an American singer and actor. He is
-                  regarded as one of the most significant cultural icons of the
-                  20th century and is often referred to as the "King of Rock and
-                  Roll" or simply "the King". His energized interpretations of
-                  songs and sexually provocative performance style, combined
-                  with a singularly potent mix of influences across color lines
-                  during a transformative era in race relations, led him to
-                  great success—and initial controversy.
-                </h5>
+                <h2>About me</h2>
+                <h3>
+                  I am Elvis Aaron Presley , also known simply as Elvis, an
+                  American singer, photographer and actor. I have been regarded
+                  as one of the most significant cultural icons of the 20th
+                  century and often referred to as the "King of Rock and Roll"
+                  or simply "the King"..... And I love dogs!!!
+                </h3>
               </div>
             </div>
 
             <div className="comments-main">
               <div>
-                <h3>Your Photos</h3>
+                <h3>My Photos</h3>
                 <ul className="photos">
                   {this.props.photos.map((photo) => (
                     <PhotoBox photo={photo} className="photo" />
@@ -86,13 +82,13 @@ class ProfilePage extends Component {
                 </ul>
               </div>
             </div>
-            <div className="contact-info">
+            {/* <div className="contact-info">
               <div>JOINED: 1994</div>
               <div>EMAIL: {user_email}</div>
-            </div>
+            </div> */}
           </div>
         </main>
-        <footer className="footer">our footer</footer>
+        <footer className="footer">woofr © copyright 2020</footer>
       </div>
     );
   }

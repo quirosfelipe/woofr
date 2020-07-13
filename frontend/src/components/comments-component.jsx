@@ -8,12 +8,12 @@ export const usersObj = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ferras_Side_Profile_Shot.png/1200px-Ferras_Side_Profile_Shot.png",
   },
   {
-    username: "ElvisP",
+    username: "Elvis",
     imgUrl:
       "https://yt3.ggpht.com/-ABnvydjRhEw/AAAAAAAAAAI/AAAAAAAAAAA/MH2MtkugMpM/s900-c-k-no/photo.jpg",
   },
   {
-    username: "Willy Smith",
+    username: "Will",
     imgUrl: "https://allstarbio.com/wp-content/uploads/2016/11/Will-Smith.png",
   },
   {
@@ -22,12 +22,12 @@ export const usersObj = [
       "https://answersafrica.com/wp-content/uploads/2019/08/arnold-schwarzenegger-bodybuilding.jpg",
   },
   {
-    username: "Michael Jackson",
+    username: "Mike",
     imgUrl:
       "http://2.bp.blogspot.com/-BebDmod0rSA/UKnlUqs2RtI/AAAAAAAAHcg/gM4dnd78mxg/s1600/michael+jackson+smooth+criminal+3.jpg",
   },
   {
-    username: "Bakari Holmes",
+    username: "Bakari",
     imgUrl: "https://i.ytimg.com/vi/d5JWh1y1fBE/maxresdefault.jpg",
   },
 ];

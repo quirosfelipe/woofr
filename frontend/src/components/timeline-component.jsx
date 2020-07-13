@@ -4,23 +4,22 @@ import "./timeline-component.css";
 const Timeline = (props) => {
   // console.log("this is the props", props);
   return (
+    // <div>
     <div className="timeline-container">
       <div className="picture">
         <img
           alt="timeline"
-          src="https://www.goldderby.com/wp-content/uploads/2017/08/Elvis-Presley-Movies-Ranked.jpg?w=620&h=360&crop=1"
+          src="https://activerain-store.s3.amazonaws.com/image_store/uploads/9/4/8/7/7/ar13766509777849.jpg"
         ></img>
       </div>
       <div className="info">
         <div>
           <h3>{props.data}</h3>
         </div>
-        <div>
-          <a href="folllow">Follow</a>
-        </div>
-        <div>
+        <div>{/* <a href="folllow">Follow</a> */}</div>
+        {/* <div>
           <a href="folllow">tags</a>
-        </div>
+        </div> */}
       </div>
       {/* <div className="follow">
                 <button>FOLLOW</button>
