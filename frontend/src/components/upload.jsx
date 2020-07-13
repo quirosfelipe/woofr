@@ -26,10 +26,11 @@ class Upload extends Component {
 
 	handleUpload = (e) => {
 		e.preventDefault();
-		// const formData = new FormData();
+		const formData = new FormData();
 		console.log('state info', this.state.photoFile);
-
-		this.props.postToAws(this.state.photoFile, this.props.match.params.id); //userId
+		formData.append('file', this.state.photoFile);
+		formData.append('id', this.props.match.params.id);
+		this.props.postToAws(formData); //userId
 	};
 
 	render() {

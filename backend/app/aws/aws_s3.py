@@ -1,46 +1,28 @@
 import boto3
+from ..config import S3_KEY, S3_SECRET, S3_BUCKET
 
-#using aws s3
-s3 = boto3.resource('s3')
+s3 = boto3.client(
+   "s3",
+   aws_access_key_id=S3_KEY,
+   aws_secret_access_key=S3_SECRET
+)
 
-def upload_file(file_name, bucket):
-    """
-    Function to upload a file to an S3 bucket
-    """
-    object_name = file_name
-    s3_client = boto3.client('s3')
-    response = s3_client.upload_file(file_name, bucket, object_name)
+def upload_file_to_s3(file, bucket_name, acl="public-read"):
+    print('bucket and file', file, bucket_name)
+    try:
 
-    return response
+        s3.upload_fileobj(
+            file,
+            bucket_name,
+            file.filename,
+            ExtraArgs={
+                "ACL": acl,
+                "ContentType": file.content_type
+            }
+        )
 
-
-def download_file(file_name, bucket):
-    """
-    Function to download a given file from an S3 bucket
-    """
-    s3 = boto3.resource('s3')
-    output = f"downloads/{file_name}"
-    s3.Bucket(bucket).download_file(file_name, output)
-
-    return output
-    
-
-def list_files(bucket):
-    """
-    Function to list files in a given S3 bucket
-    """
-    s3 = boto3.client('s3')
-    contents = []
-    for item in s3.list_objects(Bucket=bucket)['Contents']:
-        contents.append(item)
-
-    return contents
-
-def get_photo(file_name, bucket):
-    url = s3.generate_presigned_url('get_object',
-                                Params={
-                                    'Bucket': 'woofr',
-                                    'Key': f"upload/{file_name}",
-                                },                                  
-                                ExpiresIn=3600)
-    return url
+    except Exception as e:
+        # This is a catch all exception, edit this part to fit your needs.
+        print("Something Happened: ", e)
+        return e
+    return "{}{}".format('http://{}.s3-us-west-1.amazonaws.com/', file.filename)

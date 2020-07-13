@@ -27,11 +27,12 @@ export const fetchPuppyPhoto = (id) => async (dispatch) => {
 //   if (!response.ok) throw response;
 
 // }
-export const postToAws = (file, id) => async (dispatch) => {
-	console.log(file, id);
+export const postToAws = (formData) => async (dispatch) => {
+	console.log('in the aws route');
 	const response = await fetch('http://localhost:5000/api/upload', {
 		method: 'POST',
-		body: { file, id },
+		// headers: { 'Content-Type': 'multipart/form-data' },
+		body: formData,
 	});
 	if (response.ok) {
 		const { message } = response.json();
