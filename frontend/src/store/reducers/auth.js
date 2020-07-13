@@ -11,20 +11,20 @@ export const UPDATE_EMAIL = "UPDATE_EMAIL";
 export const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 
 //ACTIONS
-const updatePassword = (value) => ({
-  type: UPDATE_PASSWORD,
-  value,
-});
+// const updatePassword = (value) => ({
+//   type: UPDATE_PASSWORD,
+//   value,
+// });
 
-const updateEmail = (value) => ({
-  type: UPDATE_EMAIL,
-  value,
-});
+// const updateEmail = (value) => ({
+//   type: UPDATE_EMAIL,
+//   value,
+// });
 
-export const actions = {
-  updateEmail,
-  updatePassword,
-};
+// export const actions = {
+//   updateEmail,
+//   updatePassword,
+// };
 
 const removeToken = () => {
   return {
@@ -48,7 +48,7 @@ export const submitComment = (comment, userId, photoId) => async (dispatch) => {
     // debugger;
     console.log("retrieving");
     //   console.log(JSON.stringify({ email, password }));
-    const response = await fetch(`http://localhost:5000/api/comments`, {
+    const response = await fetch(`${baseUrl}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, photoId, comment }),
@@ -68,15 +68,15 @@ export const submitComment = (comment, userId, photoId) => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-	console.log(email, password);
-	try {
-		console.log('retrieving');
-		console.log(JSON.stringify({ email, password }));
-		const response = await fetch(`http://localhost:5000/api/session`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ email, password }),
-		});
+  console.log(email, password);
+  try {
+    console.log("retrieving");
+    console.log(JSON.stringify({ email, password }));
+    const response = await fetch(`${baseUrl}/session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
     console.log("failed");
     if (response.ok) {
@@ -95,19 +95,13 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch, getState) => {
-  const {
-    session: { access_token },
-  } = getState();
-  const response = await fetch(`${baseUrl}/session`, {
-    method: "DELETE",
-    headers: { Authorization: `Bearer ${access_token}` },
-  });
+  console.log("in the logout selector");
+  window.localStorage.removeItem(TOKEN_KEY);
+  dispatch(removeToken());
+};
 
-  if (response.ok) {
-    console.log("inside local storage");
-    window.localStorage.removeItem(TOKEN_KEY);
-    dispatch(removeToken());
-  }
+const initialState = {
+  access_token: "",
 };
 
 export const signup = (user_name, email, password) => async (dispatch) => {
@@ -120,7 +114,6 @@ export const signup = (user_name, email, password) => async (dispatch) => {
   if (response.ok) {
     const { access_token, user } = await response.json();
 
-    window.localStorage.setItem(USER_EMAIL, user.email);
     window.localStorage.setItem(USER_NAME, user.user_name);
     window.localStorage.setItem(USER_ID, user.id);
     window.localStorage.setItem(TOKEN_KEY, access_token);
@@ -130,9 +123,6 @@ export const signup = (user_name, email, password) => async (dispatch) => {
 };
 
 //REDUCERS
-const initialState = {
-  access_token: "",
-};
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_EMAIL: {
@@ -155,7 +145,7 @@ export const authReducer = (state = initialState, action) => {
     }
     case REMOVE_TOKEN: {
       const newState = { ...state };
-      delete newState.access_token;
+      delete newState.session.access_token;
       return newState;
     }
     default: {
