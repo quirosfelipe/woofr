@@ -24,20 +24,19 @@ Users interact through a friendly interface that allows for authentication and f
 
 ## Screenshots
 * Landing Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/landing-page.png)
+[![landing-page.jpg](https://i.postimg.cc/hjjn2s3D/landing-page.jpg)](https://postimg.cc/Ff2wRy48)
 
 * Login Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/login.png)
+[![login.jpg](https://i.postimg.cc/C5ngg1g9/login.jpg)](https://postimg.cc/QKDPgjVq)
 
 * Feed Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/puppy-feed.png)
+[![puppy-feed.jpg](https://i.postimg.cc/DfRWb48J/puppy-feed.jpg)](https://postimg.cc/V5Bsx69m)
 
 * Photo Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/photo-page.png)
+[![photo-page.jpg](https://i.postimg.cc/LXbpwPrz/photo-page.jpg)](https://postimg.cc/R6KynWCF)
 
 * Profile Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/profile-page.png)
+[![profile-page.jpg](https://i.postimg.cc/V5ycL8sv/profile-page.jpg)](https://postimg.cc/JHQFPSkC)
 
 * Upload Page
-![alt text](https://github.com/giancarlo-sanchez/images-demo/blob/master/upload.png)
-
+[![upload.jpg](https://i.postimg.cc/wx1yvQTY/upload.jpg)](https://postimg.cc/DmKypsXx)
