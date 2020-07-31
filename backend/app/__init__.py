@@ -29,6 +29,7 @@ app.register_blueprint(comments.bp)
 app.register_blueprint(photos.bp)
 # app.register_blueprint(s3_roues.bp)
 
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
@@ -39,17 +40,18 @@ def catch_all(path):
     else:
         return send_from_directory(os.path.join(path_dir), 'index.html')
 
+
 @app.route("/api/<userId>/upload", methods=['POST'])
 def upload_file(userId):
 
-	# A
+    # A
     if "file" not in request.files:
         return "No file key in request.files"
 
-	# B
+        # B
     file = request.files["file"]
     print('this is the request', request.data)
-   
+
     """
         These attributes are also available
 
@@ -59,13 +61,15 @@ def upload_file(userId):
         file.mimetype
 
     """
-	# D.
+    # D.
     if file:
         # file.filename = secure_filename(file.filename)
         print('this is the file', file)
-        output = upload_file_to_s3(file,userId, 'woofr')
+        output = upload_file_to_s3(file, userId, 'woofr')
         print('this is the output', str(output))
-        return {'photoUrl':str(output)}
+        return {'photoUrl': str(output)}
 
     else:
         print('something went wrong')
+
+    # access form data request.args.content to add access form data
