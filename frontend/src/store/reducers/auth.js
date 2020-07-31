@@ -78,7 +78,7 @@ export const login = (email, password) => async (dispatch) => {
       body: JSON.stringify({ email, password }),
     });
 
-    console.log("failed");
+    console.log("login selector works");
     if (response.ok) {
       console.log("here");
       const { access_token, user } = await response.json();
@@ -96,7 +96,7 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => async (dispatch, getState) => {
   console.log("in the logout selector");
-  window.localStorage.removeItem(TOKEN_KEY);
+  window.localStorage.clear();
   dispatch(removeToken());
 };
 

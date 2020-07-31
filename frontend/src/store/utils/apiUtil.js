@@ -15,7 +15,8 @@ export const fetchPuppyPhoto = (id) => async (dispatch) => {
   if (!response.ok) throw response;
   console.log("This is the response", response);
   const { photo, comments } = await response.json();
-  let payload = { photo: photo, comments: comments };
+  photo.comments = comments;
+  let payload = { ...photo };
   dispatch(puppyAdded(payload));
 };
 

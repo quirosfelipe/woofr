@@ -1,8 +1,8 @@
-import React from "react";
-// import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import { PrivateRoute, AuthRoute } from './utils/routeUtils';
-//import { loadToken, TOKEN_KEY } from "./actions/sessionActions";
+import { PrivateRoute, AuthRoute } from "./utils/routeUtils";
+import { loadToken, TOKEN_KEY } from "./store/reducers/auth";
 //import Login from "./components/login-form";
 // import Logout from "./components/logout";
 import PuppyFeed from "./components/puppyFeed";
@@ -18,17 +18,17 @@ import LoginForm from "./components/login-form";
 import SignupForm from "./components/signup-form";
 import Upload from "./components/upload";
 
-const App = () => {
-  // const { loadToken } = props;
+const App = (props) => {
+  const { loadToken } = props;
 
-  // useEffect(() => {
-  //   loadToken();
-  // }, [loadToken]);
+  useEffect(() => {
+    loadToken();
+  }, [loadToken]);
 
-  // let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
-  // let access_token = localStorageToken ? localStorageToken : props.access_token;
+  let localStorageToken = window.localStorage.getItem(TOKEN_KEY);
+  let access_token = localStorageToken ? localStorageToken : props.access_token;
 
-  // let loggedIn = access_token ? true : false;
+  let loggedIn = access_token ? true : false;
 
   return (
     <BrowserRouter>
@@ -45,7 +45,11 @@ const App = () => {
         <Route path="/signup" component={SignupForm} />
         <Route path="/puppyfeed" component={PuppyFeed} />
         <Route path="/photo-page/:id" component={PhotoPage} />
-        <Route path="/profile-page" component={ProfilePage} />
+        <PrivateRoute
+          path="/profile-page"
+          component={ProfilePage}
+          loggedIn={loggedIn}
+        />
         <Route path="/container" component={CommentForm} />
         <Route exact path="/" component={LandingPage} />
         <Route path="/upload" component={Upload} />
@@ -69,17 +73,17 @@ const App = () => {
   );
 };
 
-// const msp = (state) => {
-//   return {
-//     access_token: state.session.access_token,
-//   };
-// };
+const msp = (state) => {
+  return {
+    access_token: state.session.access_token,
+  };
+};
 
-// const mdp = (dispatch) => {
-//   return {
-//     loadToken: () => dispatch(loadToken()),
-//   };
-// };
+const mdp = (dispatch) => {
+  return {
+    loadToken: () => dispatch(loadToken()),
+  };
+};
 
-// export default connect(msp, mdp)(App);
-export default App;
+export default connect(msp, mdp)(App);
+// export default App;

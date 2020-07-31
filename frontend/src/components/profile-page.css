@@ -78,6 +78,10 @@
   font-size: 1.8rem;
 }
 
+img {
+  object-fit: cover;
+}
+
 /*Creating photos section(profile-page)*/
 .comments-main {
   display: flex;
