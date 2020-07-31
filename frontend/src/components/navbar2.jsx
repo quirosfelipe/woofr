@@ -45,7 +45,7 @@ const Navbar2 = () => (
         </button>
       </Link>
     </div> */}
-    <Logout />
+    <Logout props={handleLogout} />
   </header>
 );
 export default Navbar2;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "./photo-page.css";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
@@ -12,57 +12,61 @@ import { fetchPuppyPhoto } from "../store/utils/apiUtil";
 import NavBar2 from "./navbar2";
 import Navbar2 from "./navbar2";
 
-class PhotoPage extends Component {
-  componentDidMount() {
-    this.props.fetchPuppyPhoto(this.props.match.params.id);
+const PhotoPage = (props) => {
+  const photoId = props.match.params.id;
+
+  useEffect(() => {
+    props.fetchPuppyPhoto(photoId);
+  }, []);
+
+  // console.log("this is photoprops", props);
+  console.log("before", props.photo);
+  if (!props.photo) {
+    return null;
   }
-  render() {
-    const photoId = this.props.match.params.id;
-    console.log("this is photoprops", this.props);
-    if (!this.props.photo) {
-      return null;
-    }
-    return (
-      <div className="grid-container-photo">
-        <Navbar2 />
-        <main className="main">
-          <div className="content-photo">
-            <div className="photo-main photo-main2">
-              {/* <div className="link-return">
+  if (!props.photo.comments) return null;
+  console.log("after", props.photo);
+  return (
+    <div className="grid-container-photo">
+      <Navbar2 />
+      <main className="main">
+        <div className="content-photo">
+          <div className="photo-main photo-main2">
+            {/* <div className="link-return">
                 <a href="/puppyfeed">Go back to feed page</a>
               </div> */}
-              <img alt="puppy-pic" src={this.props.photo.photo.photoUrl}></img>
-            </div>
+            <img alt="puppy-pic" src={props.photo.photoUrl}></img>
+          </div>
 
-            <div className="profile-main">
-              <UserNameBox userInfo={this.props.photo} />
-            </div>
+          <div className="profile-main">
+            <UserNameBox userInfo={props.photo} />
+          </div>
 
-            <div className="comments-main">
+          <div className="comments-main">
+            <div>
+              <p className="align-comments">Comments</p>
+              <ul className="comment-section-photo">
+                {props.photo.comments.map((comment) => (
+                  <li key={comment.id}>
+                    <CommentBox comment={comment} />
+                  </li>
+                ))}
+              </ul>
               <div>
-                <p className="align-comments">Comments</p>
-                <ul className="comment-section-photo">
-                  {this.props.photo.comments.map((comment) => (
-                    <li key={comment.id}>
-                      <CommentBox comment={comment} />
-                    </li>
-                  ))}
-                </ul>
-                <div>
-                  <CommentForm props={photoId} />
-                </div>
+                <CommentForm props={photoId} />
               </div>
             </div>
           </div>
-        </main>
-        <footer className="footer-photo">woofr © copyright 2020</footer>
-      </div>
-    );
-  }
-}
+        </div>
+      </main>
+      <footer className="footer-photo">woofr © copyright 2020</footer>
+    </div>
+  );
+};
 
 const mapStateToProps = (state, ownProps) => {
   const photo = getPhotoById(state, ownProps.match.params.id);
+  console.log("photo from redux store", photo);
   return {
     photo,
   };

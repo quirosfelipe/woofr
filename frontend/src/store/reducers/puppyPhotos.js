@@ -4,8 +4,8 @@ export const puppiesAdded = (photos) => {
   return { type: "RECEIVE_PUPPY_PHOTOS", photos };
 };
 
-export const puppyAdded = (payload) => {
-  return { type: "RECEIVE_PUPPY_PHOTO", payload };
+export const puppyAdded = (photo) => {
+  return { type: "RECEIVE_PUPPY_PHOTO", photo };
 };
 
 export const photoUploaded = (message) => {
@@ -21,8 +21,9 @@ export const puppyPhotoReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case "RECEIVE_PUPPY_PHOTO":
+      console.log(action);
       return Object.assign(newState, {
-        [action.payload.photo.id]: action.payload,
+        [action.photo.id]: action.photo,
       });
     case "RECEIVE_PUPPY_PHOTOS":
       let nextState = {};

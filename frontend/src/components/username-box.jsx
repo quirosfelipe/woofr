@@ -4,19 +4,16 @@ import { usersObj } from "./comments-component";
 
 const UserNameBox = (props) => {
   console.log("this is userbox props", props);
-  // console.log("this is object props", usersObj);
+  console.log("this is object props", usersObj);
   return (
     <div className="username-container">
       <div className="picture-box">
-        <img
-          alt="user"
-          src={usersObj[props.userInfo.photo.userId].imgUrl}
-        ></img>
+        <img alt="user" src={usersObj[props.userInfo.userId].imgUrl}></img>
       </div>
       <div className="info-box">
-        <div>{usersObj[props.userInfo.photo.userId].username}</div>
+        <div>{usersObj[props.userInfo.userId].username}</div>
       </div>
-      <div className="follow">{props.userInfo.photo.description}</div>
+      <div className="follow">{props.userInfo.description}</div>
       {/* <div className="blank"></div>
       <div className="widgets">
         <div>
