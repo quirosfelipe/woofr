@@ -18,16 +18,14 @@ const user_name = window.localStorage.getItem("USER_NAME");
 const user_id = window.localStorage.getItem("USER_ID");
 // const { user_name, email, id } = user;
 
-console.log("this is the user", user_name, user_email, user_id);
-//console.log("this is the user", user.id);
-//console.log("this is the user", user.email);
+//("this is the user", user.id);
+//("this is the user", user.email);
 
 class ProfilePage extends Component {
   componentDidMount() {
     this.props.fetchPuppyOwners(user_id);
   }
   render() {
-    console.log("props", this.props.photos);
     if (!this.props.photos) {
       return null;
     }

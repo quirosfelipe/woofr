@@ -28,7 +28,6 @@ const SignupForm = (props) => {
   if (props.access_token) {
     return <Redirect to="/puppyfeed" />;
   } else {
-    console.log("This is the sign up request", props);
     return (
       <div className="login-page">
         <div className="container">

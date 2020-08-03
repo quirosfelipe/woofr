@@ -19,13 +19,13 @@ const PhotoPage = (props) => {
     props.fetchPuppyPhoto(photoId);
   }, []);
 
-  // console.log("this is photoprops", props);
-  console.log("before", props.photo);
+  // ("this is photoprops", props);
+  // ("before", props.photo);
   if (!props.photo) {
     return null;
   }
   if (!props.photo.comments) return null;
-  console.log("after", props.photo);
+  // ("after", props.photo);
   return (
     <div className="grid-container-photo">
       <Navbar2 />
@@ -66,7 +66,7 @@ const PhotoPage = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   const photo = getPhotoById(state, ownProps.match.params.id);
-  console.log("photo from redux store", photo);
+  // ("photo from redux store", photo);
   return {
     photo,
   };

@@ -1,4 +1,3 @@
 {
-    "git.ignoreLimitWarning": true,
-    "python.pythonPath": "/Users/feliperodriguez/.pyenv/versions/3.8.2/bin/python"
+  "git.ignoreLimitWarning": true
 }
