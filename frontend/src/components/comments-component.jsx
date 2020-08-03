@@ -33,7 +33,7 @@ export const usersObj = [
 ];
 
 const CommentBox = (props) => {
-  console.log("this are the comments", props);
+  // ("this are the comments", props);
   return (
     <div className="comment-container">
       <div className="picture-comment">

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 // import Timeline from './timeline-component'
 
 export default function PhotoBox(props) {
-  // console.log("this are the photos props", props);
+  // ("this are the photos props", props);
 
   return (
     <li key={props.photo.id}>

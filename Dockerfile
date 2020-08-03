@@ -8,6 +8,8 @@ RUN npm install && npm run build
 
 FROM python:3.8.2-alpine
 
+COPY /.aws /.aws
+
 EXPOSE 5000
 
 RUN apk update \
@@ -28,4 +30,4 @@ COPY /backend .
 
 COPY --from=build /frontend/build /frontend/build
 
-ENTRYPOINT [ "./docker-entrypoint.sh" 
+ENTRYPOINT [ "./docker-entrypoint.sh"]

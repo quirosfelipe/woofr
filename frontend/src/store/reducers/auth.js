@@ -43,22 +43,21 @@ export const loadToken = () => async (dispatch) => {
 };
 
 export const submitComment = (comment, userId, photoId) => async (dispatch) => {
-  console.log("this is the request", userId, comment, photoId);
   try {
     // debugger;
-    console.log("retrieving");
-    //   console.log(JSON.stringify({ email, password }));
-    const response = await fetch(`${baseUrl}/comments`, {
+
+    //   (JSON.stringify({ email, password }));
+    const response = await fetch(`${baseUrl}/api/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, photoId, comment }),
     });
-    // console.log("done");
-    //     console.log("failed");
+    // ("done");
+    //     ("failed");
     //     if (response.ok) {
-    //       console.log("here");
+    //       ("here");
     //       const { access_token, user } = await response.json();
-    //       console.log("these are", userId, photoId, comment);
+    //       ("these are", userId, photoId, comment);
     //       return dispatch(setToken(access_token));
     //     }
   } catch (error) {
@@ -68,21 +67,17 @@ export const submitComment = (comment, userId, photoId) => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-  console.log(email, password);
   try {
-    console.log("retrieving");
-    console.log(JSON.stringify({ email, password }));
-    const response = await fetch(`${baseUrl}/session`, {
+    JSON.stringify({ email, password });
+    const response = await fetch(`${baseUrl}/api/session`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
 
-    console.log("login selector works");
     if (response.ok) {
-      console.log("here");
       const { access_token, user } = await response.json();
-      console.log("these are", access_token, user);
+
       window.localStorage.setItem(USER_EMAIL, user.email);
       window.localStorage.setItem(USER_NAME, user.user_name);
       window.localStorage.setItem(USER_ID, user.id);
@@ -95,7 +90,6 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch, getState) => {
-  console.log("in the logout selector");
   window.localStorage.clear();
   dispatch(removeToken());
 };
@@ -105,7 +99,7 @@ const initialState = {
 };
 
 export const signup = (user_name, email, password) => async (dispatch) => {
-  const response = await fetch(`${baseUrl}/session/register`, {
+  const response = await fetch(`${baseUrl}/api/session/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ user_name, email, password }),

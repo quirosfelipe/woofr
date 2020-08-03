@@ -1,7 +1,7 @@
+import os
 from flask import Flask, send_from_directory, request, jsonify
 from flask_migrate import Migrate
 from flask_cors import CORS
-import os
 
 from app.config import Configuration
 from app.routes import session
@@ -35,7 +35,7 @@ app.register_blueprint(photos.bp)
 def catch_all(path):
     print(f'caught_path: {path}')
     path_dir = os.path.abspath("./frontend/build")
-    if path and os.path.exists(f'./frontend/build/static/{path}'):
+    if path and (os.path.exists(f'./frontend/build/static/{path}') or os.path.exists(f'./frontend/build/{path}')):
         return send_from_directory(os.path.join(path_dir), path)
     else:
         return send_from_directory(os.path.join(path_dir), 'index.html')
