@@ -43,14 +43,15 @@ def catch_all(path):
 
 @app.route("/api/<userId>/upload", methods=['POST'])
 def upload_file(userId):
-    print('this is the form data', request.args.content)
+
+    print('this is the form data', request.form.getlist('description'))
+
     # A
     if "file" not in request.files:
         return "No file key in request.files"
 
         # B
     file = request.files["file"]
-    print('this is the request', request.data)
 
     """
         These attributes are also available
@@ -64,12 +65,10 @@ def upload_file(userId):
     # D.
     if file:
         # file.filename = secure_filename(file.filename)
-        print('this is the file', file)
         output = upload_file_to_s3(file, userId, 'woofr')
-        print('this is the output', str(output))
         return {'photoUrl': str(output)}
 
     else:
         print('something went wrong')
 
-    # access form data request.args.content to add access form data
+    # access form data request.form.getlist to add access form data
