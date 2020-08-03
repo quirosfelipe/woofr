@@ -43,7 +43,7 @@ def catch_all(path):
 
 @app.route("/api/<userId>/upload", methods=['POST'])
 def upload_file(userId):
-
+    print('this is the form data', request.args.content)
     # A
     if "file" not in request.files:
         return "No file key in request.files"

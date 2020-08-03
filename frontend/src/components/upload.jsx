@@ -36,6 +36,8 @@ class Upload extends Component {
       this.state.photoFile
     );
     formData.append("file", this.state.photoFile);
+    formData.append("description", this.state.description);
+    formData.append("photoName", this.state.photoName);
     this.props.postToAws(
       formData,
       user_id,
