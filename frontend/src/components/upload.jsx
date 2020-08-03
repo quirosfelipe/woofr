@@ -27,24 +27,25 @@ class Upload extends Component {
 		this.setState({ photoFile: e.target.files[0] });
 	};
 
-	handleUpload = (e) => {
-		const formData = new FormData();
-		console.log(
-			'state info',
-			this.state.description,
-			this.state.photoName,
-			this.state.photoFile
-		);
-		formData.append('file', this.state.photoFile);
-		formData.append('description', this.state.description);
-		formData.append('photoName', this.state.photoName);
-		this.props.postToAws(
-			formData,
-			user_id,
-			this.state.description,
-			this.state.photoName
-		);
-	};
+  handleUpload = (e) => {
+    const formData = new FormData();
+    console.log(
+      "state info",
+      this.state.description,
+      this.state.photoName,
+      this.state.photoFile
+    );
+    formData.append("file", this.state.photoFile);
+    formData.append("description", this.state.description);
+    formData.append("photoName", this.state.photoName);
+    this.props.postToAws(
+      formData,
+      user_id,
+      this.state.description,
+      this.state.photoName
+    );
+  };
+
 
 	render() {
 		console.log('This is the state', this.state);
