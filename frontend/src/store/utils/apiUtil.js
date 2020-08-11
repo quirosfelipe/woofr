@@ -21,31 +21,24 @@ export const fetchPuppyPhoto = (id) => async (dispatch) => {
 };
 
 export const postToAws = (formData, userId, description, photoName) => async (
-  dispatch
+	dispatch
 ) => {
-  // ("in the aws route", description, photoName);
-  let response = await fetch(`${baseUrl}/api/${userId}/upload`, {
-    method: "POST",
-    body: formData,
-  });
-  if (response.ok) {
-    const { photoUrl } = await response.json();
-    // ("photourl -> ", photoUrl);
-    const message = "upload success";
-    await fetch(`${baseUrl}/api/photos/create`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId, description, photoName, photoUrl }),
-    });
-    window.location.href = "/profile-page";
-    return dispatch(photoUploaded(message));
-  }
-  // ("res not okay");
+	console.log('in the aws route', description, photoName);
+	let response = await fetch(`${baseUrl}/api/${userId}/upload`, {
+		method: 'POST',
+		body: formData,
+	});
+	if (response.ok) {
+		const message = 'upload success';
+		window.location.href = '/profile-page';
+		return dispatch(photoUploaded(message));
+	}
+	
 };
 
 export const fetchPuppyOwners = (id) => async (dispatch) => {
-  const response = await fetch(`${baseUrl}/api/photos/${id}`);
-  if (!response.ok) throw response;
-  const { photos } = await response.json();
-  dispatch(myPuppy(photos));
+	const response = await fetch(`${baseUrl}/api/photos/${id}`);
+	if (!response.ok) throw response;
+	const { photos } = await response.json();
+	dispatch(myPuppy(photos));
 };

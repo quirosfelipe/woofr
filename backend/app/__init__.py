@@ -1,6 +1,7 @@
 import os
 from flask import Flask, send_from_directory, request, jsonify
 from flask_migrate import Migrate
+from .models.photos import Photo
 from flask_cors import CORS
 
 from app.config import Configuration
@@ -44,7 +45,7 @@ def catch_all(path):
 @app.route("/api/<userId>/upload", methods=['POST'])
 def upload_file(userId):
 
-    print('this is the form data', request.form.getlist('description'))
+    print('this is the form data', request.form.getlist('photoName'))
 
     # A
     if "file" not in request.files:
@@ -52,7 +53,8 @@ def upload_file(userId):
 
         # B
     file = request.files["file"]
-
+    description = request.form.getlist('description')
+    photo_name = request.form.getlist('photoName')
     """
         These attributes are also available
 
@@ -60,13 +62,21 @@ def upload_file(userId):
         file.content_type
         file.content_length
         file.mimetype
-
     """
     # D.
     if file:
         # file.filename = secure_filename(file.filename)
-        output = upload_file_to_s3(file, userId, 'woofr')
-        return {'photoUrl': str(output)}
+        photo_url = upload_file_to_s3(file, userId, 'woofr')
+        print(photo_url)
+        try:
+            photo = Photo(
+                userId=userId, description=description[0], photoName=photo_name[0], photoUrl=photo_url)
+            db.session.add(photo)
+            db.session.commit()
+            return {'photo': photo.to_dict()}
+        except AssertionError as message:
+            return jsonify({"error": str(message)}), 400
+            
 
     else:
         print('something went wrong')
