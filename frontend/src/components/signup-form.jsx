@@ -37,20 +37,21 @@ const SignupForm = (props) => {
               <input
                 className="login-container__form-email"
                 type="text"
-                placeholder="username"
+                placeholder="Enter username"
                 onChange={handleUserChange}
               ></input>
               <br />
               <input
                 className="login-container__form-email"
                 type="email"
-                placeholder="example@email.com"
+                placeholder="Enter email"
                 onChange={handleEmailChange}
               ></input>
               <br />
               <input
                 className="login-container__form-password"
                 type="password"
+                placeholder="Enter password"
                 onChange={handlePasswordChange}
               ></input>
               <br />
