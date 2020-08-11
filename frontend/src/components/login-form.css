@@ -59,3 +59,8 @@
   color: white;
   padding: 5px 0px;
 }
+
+.login-or {
+  display: flex;
+  justify-content: space-around;
+}

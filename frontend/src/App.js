@@ -43,31 +43,23 @@ const App = (props) => {
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/login" component={LoginForm} />
         <Route path="/signup" component={SignupForm} />
-        <Route path="/puppyfeed" component={PuppyFeed} />
-        <Route path="/photo-page/:id" component={PhotoPage} />
+        <PrivateRoute
+          path="/puppyfeed"
+          component={PuppyFeed}
+          loggedIn={loggedIn}
+        />
+        <PrivateRoute
+          path="/photo-page/:id"
+          component={PhotoPage}
+          loggedIn={loggedIn}
+        />
         <PrivateRoute
           path="/profile-page"
           component={ProfilePage}
           loggedIn={loggedIn}
         />
-        <Route path="/container" component={CommentForm} />
         <Route exact path="/" component={LandingPage} />
-        <Route path="/upload" component={Upload} />
-        {/* <PrivateRoute
-          path="/puppyfeed"
-          component={PuppyFeed}
-          // loggedIn={loggedIn}
-        />
-        <PrivateRoute
-          path="/photo-page"
-          component={PhotoPage}
-          // loggedIn={loggedIn}
-        />
-        <PrivateRoute
-          path="/container"
-          component={CommentBox}
-          loggedIn={loggedIn}
-        /> */}
+        <PrivateRoute path="/upload" component={Upload} loggedIn={loggedIn} />
       </Switch>
     </BrowserRouter>
   );
@@ -86,4 +78,3 @@ const mdp = (dispatch) => {
 };
 
 export default connect(msp, mdp)(App);
-// export default App;

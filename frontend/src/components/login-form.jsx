@@ -20,6 +20,10 @@ const LoginForm = (props) => {
     props.login(email, password);
   };
 
+  const demoSign = (event) => {
+    event.preventDefault();
+    props.login("demo@example.com", "pass1234");
+  };
   if (props.access_token) {
     return <Redirect to="/puppyfeed" />;
   } else {
@@ -41,18 +45,27 @@ const LoginForm = (props) => {
               <input
                 className="login-container__form-email"
                 type="email"
-                placeholder="example@email.com"
+                placeholder="Enter email"
                 onChange={handleEmailChange}
               ></input>
               <br />
               <input
                 className="login-container__form-password"
                 type="password"
+                placeholder="Enter password"
                 onChange={handlePasswordChange}
               ></input>
               <br />
               <button className="login-container__form-submit" type="submit">
                 Submit
+              </button>
+              <div className="login-or">OR</div>
+              <button
+                className="login-container__form-submit"
+                type="submit"
+                onClick={demoSign}
+              >
+                Login as Elvis
               </button>
             </form>
           </div>
