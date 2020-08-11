@@ -42,15 +42,39 @@ export const loadToken = () => async (dispatch) => {
   }
 };
 
-export const submitComment = (comment, userId, photoId) => async (dispatch) => {
+export const submitComment = (comment, photoId) => async (dispatch) => {
   try {
     // debugger;
 
     //   (JSON.stringify({ email, password }));
+    const userId = window.localStorage.getItem("USER_ID");
     const response = await fetch(`${baseUrl}/api/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, photoId, comment }),
+    });
+    // ("done");
+    //     ("failed");
+    //     if (response.ok) {
+    //       ("here");
+    //       const { access_token, user } = await response.json();
+    //       ("these are", userId, photoId, comment);
+    //       return dispatch(setToken(access_token));
+    //     }
+  } catch (error) {
+    //     console.error(error);
+    //   }
+  }
+};
+
+export const deleteComment = (commentId) => async (dispatch) => {
+  try {
+    // debugger;
+
+    const response = await fetch(`${baseUrl}/api/comments/${commentId}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ commentId }),
     });
     // ("done");
     //     ("failed");

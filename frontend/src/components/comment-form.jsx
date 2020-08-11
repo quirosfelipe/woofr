@@ -4,7 +4,7 @@ import { submitComment } from "../store/reducers/auth";
 import { Link, Redirect } from "react-router-dom";
 import "./comment-form.css";
 
-const userId = window.localStorage.getItem("USER_ID");
+// const userId = window.localStorage.getItem("USER_ID");
 
 const CommentForm = (props) => {
   const photoId = props.props;
@@ -15,7 +15,7 @@ const CommentForm = (props) => {
   };
 
   const handleSubmit = (event) => {
-    props.submitComment(comment, userId, photoId);
+    props.submitComment(comment, photoId);
   };
 
   //   if (props.access_token) {

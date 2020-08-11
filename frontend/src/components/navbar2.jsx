@@ -15,7 +15,7 @@ const Navbar2 = () => (
   <header className="header">
     <div>
       <span className="woofr-logo">
-        <a href="/">woofr</a>
+        <a href="/puppyfeed">woofr</a>
       </span>
       <span className="puppyfeed">
         <a href="/puppyfeed">PuppyFeed</a>

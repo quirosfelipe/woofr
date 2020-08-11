@@ -24,7 +24,7 @@ const Logout = (props) => {
   };
 
   return (
-    <a href="/login">
+    <a href="/">
       <button className="logout-button" id="logout" onClick={handleLogout}>
         Logout
       </button>

@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./comments-component.css";
+import { deleteComment } from "../store/reducers/auth";
 
 export const usersObj = [
   {
@@ -32,8 +34,17 @@ export const usersObj = [
   },
 ];
 
+const userId = window.localStorage.getItem("USER_ID");
+console.log(userId);
+
 const CommentBox = (props) => {
-  // ("this are the comments", props);
+  console.log("this are the comments", props);
+
+  const handleDelete = (event) => {
+    // console.log("This is comments Id:", props.comment.id);
+    props.deleteComment(props.comment.id);
+    window.location.reload(false);
+  };
   return (
     <div className="comment-container">
       <div className="picture-comment">
@@ -45,7 +56,20 @@ const CommentBox = (props) => {
           <p>{props.comment.comment}</p>
         </div>
       </div>
+      <div>
+        {parseInt(userId) === props.comment.userId ? (
+          <button onClick={handleDelete}>x</button>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };
-export default CommentBox;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+  };
+};
+export default connect(null, mapDispatchToProps)(CommentBox);

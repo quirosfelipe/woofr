@@ -7,7 +7,7 @@ const Navbar = () => (
   <header className="header nav-bar">
     <div>
       <span className="woofr-logo">
-        <a href="/">woofr</a>
+        <a href="/puppyfeed">woofr</a>
       </span>
     </div>
     <div className="header-links">

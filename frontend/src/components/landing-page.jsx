@@ -11,10 +11,8 @@ function LandingPage() {
         <h1 className="text-header">
           <strong>Find your inspiration.</strong>
         </h1>
-        <p className="text-fill">
-          Join the Woofr community, home to tens of billions
-        </p>
-        <p className="text-fill"> of dog's photos.</p>
+        <p className="text-fill">Join the Woofr community, home of the best</p>
+        <p className="text-fill"> dog's photos.</p>
       </main>
       <footer className="footer">
         Created by:
