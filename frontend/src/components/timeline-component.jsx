@@ -2,7 +2,7 @@ import React from "react";
 import "./timeline-component.css";
 
 const Timeline = (props) => {
-  // console.log("this is the props", props);
+  // ("this is the props", props);
   return (
     // <div>
     <div className="timeline-container">

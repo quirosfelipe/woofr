@@ -21,7 +21,6 @@ export const puppyPhotoReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case "RECEIVE_PUPPY_PHOTO":
-      console.log(action);
       return Object.assign(newState, {
         [action.photo.id]: action.photo,
       });

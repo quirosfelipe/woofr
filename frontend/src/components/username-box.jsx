@@ -3,8 +3,6 @@ import "./username-box.css";
 import { usersObj } from "./comments-component";
 
 const UserNameBox = (props) => {
-  console.log("this is userbox props", props);
-  console.log("this is object props", usersObj);
   return (
     <div className="username-container">
       <div className="picture-box">

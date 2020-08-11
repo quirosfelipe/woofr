@@ -7,8 +7,6 @@ import "./comment-form.css";
 const userId = window.localStorage.getItem("USER_ID");
 
 const CommentForm = (props) => {
-  console.log("props for the comment box", props);
-
   const photoId = props.props;
   const [comment, setComment] = useState("");
 
