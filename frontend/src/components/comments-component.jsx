@@ -35,10 +35,10 @@ export const usersObj = [
 ];
 
 const userId = window.localStorage.getItem("USER_ID");
-console.log(userId);
+// console.log(userId);
 
 const CommentBox = (props) => {
-  console.log("this are the comments", props);
+  // console.log("this are the comments", props);
 
   const handleDelete = (event) => {
     // console.log("This is comments Id:", props.comment.id);

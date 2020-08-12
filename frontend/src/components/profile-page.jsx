@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import "./profile-page.css";
-import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
-import puppy1 from "./images/puppy1.jpg";
-// import Logout from './logout'
 import Timeline from "./timeline-component";
 import PhotoBox from "./photo-box";
 import { fetchPuppyOwners } from "../store/utils/apiUtil";
@@ -13,13 +10,10 @@ import NavBar2 from "./navbar2";
 // export const USER_INFO = "USER_INFO";
 
 // const access_token = window.localStorage.getItem(TOKEN_KEY);
-const user_email = window.localStorage.getItem("USER_EMAIL");
+// const user_email = window.localStorage.getItem("USER_EMAIL");
 const user_name = window.localStorage.getItem("USER_NAME");
 const user_id = window.localStorage.getItem("USER_ID");
 // const { user_name, email, id } = user;
-
-//("this is the user", user.id);
-//("this is the user", user.email);
 
 class ProfilePage extends Component {
   componentDidMount() {

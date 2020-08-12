@@ -1,15 +1,11 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./photo-page.css";
 import { connect } from "react-redux";
-import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
-// import puppy1 from "./images/puppy1.jpg";
-// import Logout from './logout'
 import UserNameBox from "./username-box";
 import CommentBox from "./comments-component";
 import CommentForm from "./comment-form";
 import { getPhotoById } from "../store/reducers/puppyPhotos";
 import { fetchPuppyPhoto } from "../store/utils/apiUtil";
-import NavBar2 from "./navbar2";
 import Navbar2 from "./navbar2";
 
 const PhotoPage = (props) => {

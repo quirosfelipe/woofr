@@ -1,6 +1,5 @@
 import React from "react";
 import "./profile-page.css";
-import { Link } from "react-router-dom";
 // import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
 // import puppy1 from './images/puppy1.jpg'
 // // import Logout from './logout'
