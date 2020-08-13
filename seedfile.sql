@@ -257,16 +257,16 @@ COPY public.photos (id, "userId", description, "photoName", "photoUrl") FROM std
 11	1	I hope for one sunny day	photoname test	https://cdn.thinglink.me/api/image/707645661801086977/1240/10/scaletowidth
 14	1	What a nice day wooooof	photoname test	https://allbigdogbreeds.com/wp-content/gallery/great-dane-puppies/Great-Dane-puppy-1.jpg
 15	2	today they told me I could be a dog model, what do you think? ...I 'd rather be Elvis's dog.	photoname test	https://s.yimg.com/ny/api/res/1.2/eYBjF68h6WfuEZtLmHhc9Q--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-US/homerun/news.mashable/4393e9c3033e5be9941b86faa7e865c1
-19	4	I love being a doggy!!	photoname test	https://onedoglove.files.wordpress.com/2013/02/german_shepherd_puppy3.jpg
 18	2	I am think' I like cats!	photoname test	https://cdn.thinglink.me/api/image/707645661801086977/1240/10/scaletowidth
 21	4	I want to watch Scooby Doo tonight	photoname test	https://cdn.lolwot.com/wp-content/uploads/2016/03/10-of-the-most-expensive-dog-breeds-in-the-world-8.jpg
 17	2	woooooooooooffffffff day!!	photoname test	https://www.rover.com/blog/wp-content/uploads/2014/08/boston-terrier-handsome-683x540.jpg
 16	2	i am the dog of the king . Period.	photoname test	https://s3-eu-west-1.amazonaws.com/bowwowtimes-new/wp-content/uploads/2015/09/16a8709e8cd8d3790f1f22afbd77878c.jpg
-22	4	have a nice weeeeeeek wooofr	photoname test	https://s.yimg.com/ny/api/res/1.2/eYBjF68h6WfuEZtLmHhc9Q--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-US/homerun/news.mashable/4393e9c3033e5be9941b86faa7e865c1
 13	1	The best concerts of our lives..... want a treat??	photoname test	https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1
 20	4	I am in doggy mode today!!!!!	photoname test	https://assets.entrepreneur.com/content/3x2/1300/20151218153624-puppies-cute-litter-terrier-bed-adoption-sleeping-friendships-cuddly-canine-pet-happy.jpeg
 9	1	Am I looking good for this, right?	photoname test	https://static.wixstatic.com/media/308209_f3fe2ef34c3142188da6ee94a523cd2f~mv2_d_1711_1396_s_2.jpg
 12	1	looks like Rex!!	photoname test	https://onedoglove.files.wordpress.com/2013/02/german_shepherd_puppy3.jpg
+19	4	I love being a doggy!!	photoname test	https://www.petmd.com/sites/default/files/puppy-training-205154482.jpg
+22	4	have a nice weeeeeeek wooofr	photoname test	https://tranquilmonkey.com/wp-content/uploads/2014/07/funny-underwater-dog-photos-10.jpg
 \.
 
 
