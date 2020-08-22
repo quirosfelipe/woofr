@@ -27,24 +27,26 @@ class Upload extends Component {
     this.setState({ photoFile: e.target.files[0] });
   };
 
-  handleUpload = (e) => {
+  handleUpload = async (e) => {
+    e.preventDefault();
     const formData = new FormData();
 
     formData.append("file", this.state.photoFile);
     formData.append("description", this.state.description);
     formData.append("photoName", this.state.photoName);
-    this.props.postToAws(
+    await this.props.postToAws(
       formData,
       user_id,
       this.state.description,
       this.state.photoName
     );
+    this.props.history.push("/puppyfeed");
   };
 
   render() {
     return (
       <div className="upload-form-container">
-        <form className="upload-form">
+        <form className="upload-form" onSubmit={this.handleUpload}>
           <p>Enter photo name!</p>
           <input
             type="text"
@@ -64,7 +66,7 @@ class Upload extends Component {
             name="file"
           ></input>
           <br />
-          <button className="upload-form__button" onClick={this.handleUpload}>
+          <button className="upload-form__button" type="submit">
             Upload
           </button>
         </form>

@@ -1,4 +1,5 @@
 import os
+import webbrowser
 from flask import Flask, send_from_directory, request, jsonify
 from flask_migrate import Migrate
 from .models.photos import Photo
@@ -76,7 +77,6 @@ def upload_file(userId):
             return {'photo': photo.to_dict()}
         except AssertionError as message:
             return jsonify({"error": str(message)}), 400
-            
 
     else:
         print('something went wrong')
