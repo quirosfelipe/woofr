@@ -8,6 +8,9 @@ import NavBar2 from "./navbar2";
 import Navbar2 from "./navbar2";
 
 class PuppyFeed extends Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     this.props.fetchPuppyPhotos();
   }
