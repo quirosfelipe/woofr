@@ -11,6 +11,7 @@ Visit the live site [here](https://woofr-app.herokuapp.com/)
 * Users can sign up or use a demo account.
 * Users have access to all the photos stored at the cloud database. 
 * Photo online management.
+* Users can upload photos.
 * Users can comment photos.
 * Profile account
 
