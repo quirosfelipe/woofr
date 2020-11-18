@@ -2,3 +2,4 @@
 /app/aws/keys.js
 .env
 .ignore
+newrelic.ini
