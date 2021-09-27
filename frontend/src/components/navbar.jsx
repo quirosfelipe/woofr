@@ -13,18 +13,13 @@ const Navbar = () => {
     <header className="header nav-bar">
       <div>
         <span className="woofr-logo">
-          <a href="/puppyfeed">Woofr</a>
+          <p href="/puppyfeed">Woofr</p>
         </span>
       </div>
-      {!user ? (
-        <div className="header nav-bar">
-          <span className="woofr-logo">
-            <a href="/puppyfeed">Woofr</a>
-          </span>
-          <span className="woofr-logo">
-            <a href="/puppyfeed">Feed</a>
-          </span>
-        </div>
+      {user ? (
+        <span className="woofr-logo">
+          <a href="/puppyfeed">Feed</a>
+        </span>
       ) : (
         <div className="header-links">
           <Link className="landing-page-navbar__header" to="/signup">
