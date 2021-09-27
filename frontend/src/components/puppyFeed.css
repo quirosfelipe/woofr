@@ -40,6 +40,8 @@ body {
   text-decoration: none;
   color: salmon;
   font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .woofr-logo a:hover {

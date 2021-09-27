@@ -31,3 +31,8 @@
   color: black;
   cursor: pointer;
 }
+
+.woofr-logos-loggedIn {
+  padding-left: 2em;
+  padding-right: 2em;
+}

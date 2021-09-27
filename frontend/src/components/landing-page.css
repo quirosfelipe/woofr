@@ -14,6 +14,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 8rem;
   height: 100%;
+  overflow: hidden;
 }
 
 #root {
@@ -22,11 +23,11 @@
 
 .text-header {
   font-size: 60px;
+  color: white;
 }
 .text-fill {
   font-size: 23px;
-  font-weight: 450;
-  color: white;
+  font-weight: bold;
 }
 
 .header {
