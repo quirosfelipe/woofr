@@ -1,4 +1,5 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request
+from flask_login import current_user, login_user, logout_user
 import jwt
 
 from ..models import db
@@ -16,7 +17,7 @@ def login():
     user = User.query.filter(User.email == data['email']).first()
     if not user:
         return {"error": "Email not found"}, 422
-
+    print('user', user.to_dict())
     if user.check_password(data['password']):
         access_token = jwt.encode(
             {'email': user.email}, Configuration.SECRET_KEY)

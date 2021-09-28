@@ -10,22 +10,6 @@ export const REMOVE_TOKEN = "REMOVE_TOKEN";
 export const UPDATE_EMAIL = "UPDATE_EMAIL";
 export const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 
-//ACTIONS
-// const updatePassword = (value) => ({
-//   type: UPDATE_PASSWORD,
-//   value,
-// });
-
-// const updateEmail = (value) => ({
-//   type: UPDATE_EMAIL,
-//   value,
-// });
-
-// export const actions = {
-//   updateEmail,
-//   updatePassword,
-// };
-
 const removeToken = () => {
   return {
     type: REMOVE_TOKEN,
@@ -53,17 +37,8 @@ export const submitComment = (comment, photoId) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, photoId, comment }),
     });
-    // ("done");
-    //     ("failed");
-    //     if (response.ok) {
-    //       ("here");
-    //       const { access_token, user } = await response.json();
-    //       ("these are", userId, photoId, comment);
-    //       return dispatch(setToken(access_token));
-    //     }
   } catch (error) {
     //     console.error(error);
-    //   }
   }
 };
 
