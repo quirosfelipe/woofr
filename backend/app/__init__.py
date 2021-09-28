@@ -1,5 +1,4 @@
 import os
-import webbrowser
 from flask import Flask, send_from_directory, request, jsonify
 from flask_migrate import Migrate
 from .models.photos import Photo
