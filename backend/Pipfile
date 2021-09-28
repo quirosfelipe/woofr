@@ -24,6 +24,8 @@ flask-cors = "*"
 six = "*"
 pyjwt = "*"
 boto3 = "*"
+flask-login = "*"
+flask-jwt = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
