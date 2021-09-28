@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login } from "../store/reducers/auth";
+import { loginUser } from "../store/reducers/session";
 import { Link, Redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./login-form.css";
 
 const LoginForm = (props) => {
@@ -16,8 +17,15 @@ const LoginForm = (props) => {
 
   const dispatch = useDispatch();
 
+  const user = useSelector((state) => state.user);
+
   const handleCredentials = (e) => {
     setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(userCredentials));
   };
 
   const handleSubmit = (event) => {
@@ -29,7 +37,7 @@ const LoginForm = (props) => {
     event.preventDefault();
     props.login("demo@example.com", "pass1234");
   };
-  if (props.access_token) {
+  if (user?.accessToken) {
     return <Redirect to="/puppyfeed" />;
   } else {
     return (
@@ -37,7 +45,7 @@ const LoginForm = (props) => {
         <div className="login-page-container">
           <div className="login-container">
             <h2 id="login-page-title">Log in to Woofr</h2>
-            <form className="login-container__form" onSubmit={handleSubmit}>
+            <form className="login-container__form" onSubmit={handleLogin}>
               <input
                 className="login-container__form-email"
                 type="email"
