@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login } from "../store/reducers/auth";
+import { loginUser } from "../store/reducers/session";
 import { Link, Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./login-form.css";
 
 const LoginForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const [userCredentials, setUserCredentials] = useState({
+    email: "",
+    password: "",
+  });
+
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
+
+  const handleCredentials = (e) => {
+    setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
   };
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(userCredentials));
   };
 
   const handleSubmit = (event) => {
@@ -24,36 +37,31 @@ const LoginForm = (props) => {
     event.preventDefault();
     props.login("demo@example.com", "pass1234");
   };
-  if (props.access_token) {
+  if (user?.accessToken) {
     return <Redirect to="/puppyfeed" />;
   } else {
     return (
       <div className="login-page">
-        <div className="landing-page-navbar positioned">
-          <div className="landing-page-navbar__header">
-            {/* <Link className='landing-page-navbar__header-logo' to='/'>
-							<h2 className='woofr'>
-								<strong>woofr</strong>
-							</h2>
-						</Link> */}
-          </div>
-        </div>
-        <div className="container">
+        <div className="login-page-container">
           <div className="login-container">
-            <h2>Log in to woofr</h2>
-            <form className="login-container__form" onSubmit={handleSubmit}>
+            <h2 id="login-page-title">Log in to Woofr</h2>
+            <form className="login-container__form" onSubmit={handleLogin}>
               <input
                 className="login-container__form-email"
                 type="email"
+                name="email"
                 placeholder="Enter email"
-                onChange={handleEmailChange}
+                value={userCredentials.email}
+                onChange={handleCredentials}
               ></input>
               <br />
               <input
                 className="login-container__form-password"
                 type="password"
+                name="password"
                 placeholder="Enter password"
-                onChange={handlePasswordChange}
+                value={userCredentials.password}
+                onChange={handleCredentials}
               ></input>
               <br />
               <button className="login-container__form-submit" type="submit">

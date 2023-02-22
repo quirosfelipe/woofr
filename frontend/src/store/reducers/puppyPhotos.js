@@ -1,5 +1,4 @@
 //ACTIONS
-
 export const puppiesAdded = (photos) => {
   return { type: "RECEIVE_PUPPY_PHOTOS", photos };
 };

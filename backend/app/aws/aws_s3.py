@@ -1,6 +1,5 @@
 import boto3
-from ..config import S3_KEY, S3_SECRET, S3_BUCKET
-from ..models.photos import Photo
+from ..config import S3_KEY, S3_SECRET
 
 s3 = boto3.client(
     "s3",

@@ -1,6 +1,10 @@
 .nav-bar {
   margin-top: -70px;
 }
+
+.header-links {
+  padding-right: 1.5em;
+}
 .login-button {
   background-color: rgb(220, 120, 109);
   color: white;
@@ -30,4 +34,15 @@
 .signup-button:hover {
   color: black;
   cursor: pointer;
+}
+
+.woofr-logo p {
+  font-size: 3.2rem;
+  text-decoration: none;
+  color: salmon;
+  font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0.5rem 0;
+  cursor: default;
 }
